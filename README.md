@@ -6,6 +6,10 @@ The experience will be designed mobile-first, with vertical phone screens as the
 
 Generated or composited scenes may be added later for the future-facing part of the story, while keeping the overall presentation minimal, intimate, and consistent with the real-media sections.
 
-Personal media is intentionally not included yet. Asset organization will be decided after the metadata manifest is available.
+Personal media and its completed metadata manifests are intentionally not included yet. Asset mapping will be decided after the manifests are uploaded and reviewed.
 
-The site is expected to use a lightweight static frontend with data-driven scene definitions rather than hardcoding every scene. Final framework and hosting decisions have not been made.
+The current prototype uses a lightweight vanilla HTML, CSS, and JavaScript frontend. Scenes are defined centrally in `site/js/story.js` and rendered by an extensible scene renderer rather than being hardcoded in HTML.
+
+The organized dataset contains 297 chronological personal media files across periods A–G. The media and its manifests are intentionally not included yet; neutral placeholders keep the prototype functional until the real asset mapping is ready.
+
+No deployment or public hosting is configured.
