@@ -306,17 +306,21 @@ nextButton.addEventListener("click", () => goToScene(currentIndex + 1));
 
 stage.addEventListener("click", (event) => {
   if (event.target.closest("button, a")) return;
+  if (event.target.closest(VIDEO_SELECTOR)) return; // native controls own every tap inside a video card
   const bounds = stage.getBoundingClientRect();
   const x = (event.clientX - bounds.left) / bounds.width;
-  const onVideo = event.target.closest("video");
   if (x < 0.22) return goToScene(currentIndex - 1);
   if (x > 0.78) return goToScene(currentIndex + 1);
-  if (onVideo) return; // native controls handle taps inside the video
   goToScene(currentIndex + 1);
 });
 
+const VIDEO_SELECTOR = "video, .card[data-kind='video']";
 let touchStart = null;
 stage.addEventListener("touchstart", (event) => {
+  if (event.target.closest(VIDEO_SELECTOR)) {
+    touchStart = null;
+    return;
+  }
   const touch = event.changedTouches[0];
   touchStart = { x: touch.clientX, y: touch.clientY };
 }, { passive: true });
