@@ -1,16 +1,17 @@
 import { sceneTypes, story } from "./story.js";
+import { renderArt, renderFlightArt } from "./art.js";
 
+const experience = document.querySelector(".experience");
 const stage = document.querySelector("#stage");
 const previousButton = document.querySelector("#previous-scene");
 const nextButton = document.querySelector("#next-scene");
 const progressBar = document.querySelector("#progress-bar");
 const progressLabel = document.querySelector("#progress-label");
 const sceneContext = document.querySelector("#scene-context");
-const tapHint = document.querySelector("#tap-hint");
 
 let currentIndex = getInitialIndex();
-let isTransitioning = false;
-let lazyObserver;
+let rapidTimer = null;
+let lastDirection = "next";
 
 function getInitialIndex() {
   const id = window.location.hash.slice(1);
@@ -18,219 +19,329 @@ function getInitialIndex() {
   return requestedIndex >= 0 ? requestedIndex : 0;
 }
 
-function createElement(tag, className, text) {
+function el(tag, className, text) {
   const element = document.createElement(tag);
   if (className) element.className = className;
   if (text !== undefined) element.textContent = text;
   return element;
 }
 
+/* ───────────── card layouts (natural aspect, never cropped) ───────────── */
+
+const PRESETS = {
+  1: [{ c: true, w: 100, h: 100, rot: 0 }],
+  2: [
+    { l: 0, t: 0, w: 66, h: 56, rot: -2 },
+    { r: 0, b: 0, w: 66, h: 56, rot: 2 },
+  ],
+  3: [
+    { l: 0, t: 0, w: 60, h: 50, rot: -1.5 },
+    { r: 0, t: 14, w: 46, h: 40, rot: 2 },
+    { l: 10, b: 0, w: 62, h: 46, rot: 1 },
+  ],
+  4: [
+    { l: 0, t: 0, w: 50, h: 46, rot: -2 },
+    { r: 0, t: 4, w: 50, h: 46, rot: 2 },
+    { l: 0, b: 4, w: 50, h: 46, rot: 1.5 },
+    { r: 0, b: 0, w: 50, h: 46, rot: -1.5 },
+  ],
+};
+
+function dumpPreset(count) {
+  const cols = 3;
+  const rows = Math.ceil(count / cols);
+  const cw = 100 / cols;
+  const ch = 100 / rows;
+  return Array.from({ length: count }, (_, i) => {
+    const col = i % cols;
+    const row = Math.floor(i / cols);
+    const jitter = ((i * 37) % 7) - 3;
+    return { l: col * cw + 0.8, t: row * ch + 0.6, w: cw - 2, h: ch - 1.6, rot: jitter * 0.9 };
+  });
+}
+
+function presetFor(scene) {
+  const count = scene.media.length;
+  if (scene.layout === "dump" || count > 4) return dumpPreset(count);
+  return PRESETS[count] || dumpPreset(count);
+}
+
+function setAspect(card, ratio, orient) {
+  if (!ratio || !Number.isFinite(ratio)) return;
+  card.style.setProperty("--ar", ratio.toFixed(4));
+  card.dataset.orient = orient || (ratio > 1.05 ? "landscape" : ratio < 0.95 ? "portrait" : "square");
+}
+
+function createCard(media, preset, z) {
+  const card = el("figure", "card");
+  card.style.setProperty("--ar", String(media.ar));
+  card.dataset.orient = media.ar > 1.05 ? "landscape" : media.ar < 0.95 ? "portrait" : "square";
+  card.dataset.kind = media.kind;
+  card.style.zIndex = String(z);
+  if (preset.c) card.classList.add("card--center");
+  ["l", "t", "r", "b"].forEach((key) => {
+    if (preset[key] !== undefined) card.style.setProperty(`--${key}`, `${preset[key]}%`);
+  });
+  card.style.setProperty("--w", preset.w);
+  card.style.setProperty("--h", preset.h);
+  card.style.setProperty("--rot", `${preset.rot || 0}deg`);
+  return card;
+}
+
+function fillCard(card, media, { autoplay = false } = {}) {
+  if (media.kind === "video") {
+    const video = document.createElement("video");
+    video.playsInline = true;
+    video.setAttribute("playsinline", "");
+    video.setAttribute("webkit-playsinline", "");
+    video.preload = "metadata";
+    video.controls = true;
+    video.loop = autoplay;
+    video.muted = autoplay;
+    video.src = `${media.src}#t=0.1`;
+    video.addEventListener("loadedmetadata", () => {
+      if (video.videoWidth && video.videoHeight) setAspect(card, video.videoWidth / video.videoHeight);
+      if (autoplay) video.play().catch(() => {});
+    });
+    video.addEventListener("play", () => {
+      stage.querySelectorAll("video").forEach((other) => {
+        if (other !== video) other.pause();
+      });
+    });
+    video.addEventListener("error", () => {
+      if (!video.dataset.stopped) dropCard(card);
+    });
+    card.append(video);
+  } else {
+    const image = document.createElement("img");
+    image.alt = "";
+    image.decoding = "async";
+    image.addEventListener("load", () => {
+      if (image.naturalWidth && image.naturalHeight) setAspect(card, image.naturalWidth / image.naturalHeight);
+    });
+    image.addEventListener("error", () => dropCard(card));
+    image.src = media.src;
+    card.append(image);
+  }
+}
+
+function dropCard(card) {
+  const scene = card.closest(".scene");
+  card.remove();
+  if (!scene) return;
+  if (scene.querySelector(".card") || scene.querySelector(".scene__copy")?.childElementCount || scene.querySelector(".art")) return;
+  goToScene(currentIndex + (lastDirection === "next" ? 1 : -1));
+}
+
+/* ───────────── copy ───────────── */
+
 function createCopy(scene) {
-  const copy = createElement("div", "scene__copy");
-  copy.append(
-    createElement("p", "scene__act", scene.act),
-    createElement("h1", "scene__title", scene.title),
-    createElement("p", "scene__caption", scene.caption),
-  );
+  const copy = el("div", "scene__copy");
+  if (scene.kicker) copy.append(el("p", "scene__kicker", scene.kicker));
+  if (scene.title) copy.append(el("h1", "scene__title", scene.title));
+  (scene.lines || []).forEach((line) => copy.append(el("p", "scene__line", line)));
+  if (scene.last) {
+    const restart = el("button", "restart", "Start again");
+    restart.type = "button";
+    restart.addEventListener("click", (event) => {
+      event.stopPropagation();
+      goToScene(0);
+    });
+    copy.append(restart);
+  }
   return copy;
 }
 
-function createPlaceholder(media, index) {
-  const placeholder = createElement("div", "media-placeholder");
-  placeholder.setAttribute("role", "img");
-  placeholder.setAttribute("aria-label", media.alt);
+/* ───────────── renderers ───────────── */
 
-  const content = createElement("div");
-  content.append(
-    createElement("span", "media-placeholder__index", String(index + 1).padStart(2, "0")),
-    createElement("span", "media-placeholder__label", media.label),
-  );
-  placeholder.append(content);
-  return placeholder;
-}
-
-function createMediaItem(media, index) {
-  const frame = createElement("figure", "media-item");
-  frame.dataset.fit = media.fit || "contain";
-  frame.style.setProperty("--media-position", media.position || "center");
-
-  if (media.placeholder || !media.src) {
-    frame.append(createPlaceholder(media, index));
-    return frame;
-  }
-
-  if (media.kind === "video") {
-    const video = document.createElement("video");
-    video.controls = true;
-    video.playsInline = true;
-    video.preload = "none";
-    video.poster = media.poster || "";
-    video.dataset.src = media.src;
-    video.setAttribute("aria-label", media.alt || "Story video");
-    frame.append(video);
-    return frame;
-  }
-
-  const image = document.createElement("img");
-  image.alt = media.alt || "Story photo";
-  image.loading = "lazy";
-  image.decoding = "async";
-  image.dataset.src = media.src;
-  frame.append(image);
-  return frame;
-}
-
-function resolveLayout(scene) {
-  if (scene.layout && scene.layout !== "auto") return scene.layout;
-  if (scene.type === "photoStack") return "stack";
-  if (scene.type === "memoryDump") return "memory-dump";
-  if (scene.type === "video") return "video";
-
-  const layoutsByCount = {
-    1: "hero",
-    2: "split",
-    3: "asymmetric",
-    4: "grid",
-    5: "focus-grid",
-  };
-  return layoutsByCount[scene.media.length] || "memory-dump";
-}
-
-function createMediaLayout(scene) {
-  const layoutName = resolveLayout(scene);
-  const layout = createElement("div", `media-layout layout--${layoutName}`);
-  layout.dataset.layout = layoutName;
-
-  scene.media.forEach((media, index) => {
-    const item = createMediaItem(media, index);
-    if (layoutName === "stack") {
-      const offset = index - (scene.media.length - 1) / 2;
-      item.style.setProperty("--stack-x", `${offset * 0.55}rem`);
-      item.style.setProperty("--stack-y", `${Math.abs(offset) * 0.35}rem`);
-      item.style.setProperty("--stack-r", `${offset * 2.2}deg`);
-      item.style.zIndex = String(index + 1);
-    }
-    layout.append(item);
-  });
-
-  return layout;
-}
-
-function renderStandardScene(scene, element) {
-  const mediaFirst = ["hero", "collage", "photoStack", "video", "memoryDump", "ending"].includes(scene.type);
-  if (mediaFirst && scene.media.length) element.append(createMediaLayout(scene));
+function renderText(scene, element) {
   element.append(createCopy(scene));
-  if (!mediaFirst && scene.media.length) element.append(createMediaLayout(scene));
+}
+
+function renderMedia(scene, element) {
+  const box = el("div", "scene__media");
+  const presets = presetFor(scene);
+  scene.media.forEach((media, index) => {
+    const card = createCard(media, presets[index], index + 1);
+    fillCard(card, media);
+    box.append(card);
+  });
+  element.append(box, createCopy(scene));
+}
+
+function renderVideo(scene, element) {
+  const box = el("div", "scene__media");
+  const media = scene.media[0];
+  const card = createCard(media, PRESETS[1][0], 1);
+  fillCard(card, media, { autoplay: true });
+  box.append(card);
+  element.append(box);
+  if (scene.lines?.length || scene.title) element.append(createCopy(scene));
 }
 
 function renderFlight(scene, element) {
-  element.append(createCopy(scene));
-  const line = createElement("div", "flight-line");
-  line.setAttribute("aria-hidden", "true");
-  const route = createElement("div", "flight-route");
-  route.append(createElement("span", "", scene.route.from), createElement("span", "", scene.route.to));
-  element.append(line, route);
+  const box = el("div", "scene__media");
+  box.innerHTML = renderFlightArt(scene.from, scene.to);
+  element.append(box, createCopy(scene));
 }
 
-function renderJokeReveal(scene, element) {
-  element.append(createMediaLayout(scene));
-  const copy = createCopy(scene);
-  copy.prepend(createElement("p", "joke-step", scene.reveal));
-  element.append(copy);
+function renderArtScene(scene, element) {
+  const box = el("div", "scene__media");
+  box.innerHTML = renderArt(scene);
+  if (scene.count) {
+    const badge = el("p", `count-badge${scene.apocalypse ? " count-badge--big" : ""}`, scene.count);
+    box.append(badge);
+  }
+  element.append(box, createCopy(scene));
+}
+
+function renderRapid(scene, element) {
+  const box = el("div", "scene__media");
+  const cards = scene.items.map((item, index) => {
+    const card = createCard(item.media, PRESETS[1][0], index + 1);
+    card.classList.add("card--rapid");
+    fillCard(card, item.media);
+    box.append(card);
+    return card;
+  });
+  const label = el("p", "rapid-label", "");
+  const copy = el("div", "scene__copy");
+  copy.append(label);
+  element.append(box, copy);
+
+  let index = 0;
+  const show = (i) => {
+    cards.forEach((card, n) => card.classList.toggle("is-active", n === i));
+    label.textContent = scene.items[i].label;
+  };
+  show(0);
+  rapidTimer = window.setInterval(() => {
+    if (index >= cards.length - 1) {
+      window.clearInterval(rapidTimer);
+      rapidTimer = null;
+      return;
+    }
+    index += 1;
+    show(index);
+  }, 950);
 }
 
 const renderers = {
-  intro: renderStandardScene,
-  hero: renderStandardScene,
-  collage: renderStandardScene,
-  photoStack: renderStandardScene,
-  video: renderStandardScene,
-  memoryDump: renderStandardScene,
+  text: renderText,
+  media: renderMedia,
+  video: renderVideo,
   flight: renderFlight,
-  text: renderStandardScene,
-  jokeReveal: renderJokeReveal,
-  ending: renderStandardScene,
+  art: renderArtScene,
+  rapid: renderRapid,
 };
 
-function observeLazyMedia(container) {
-  lazyObserver?.disconnect();
-  const pending = container.querySelectorAll("[data-src]");
-  if (!pending.length) return;
+/* ───────────── stage ───────────── */
 
-  lazyObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      const media = entry.target;
-      media.src = media.dataset.src;
-      delete media.dataset.src;
-      if (media.tagName === "VIDEO") media.load();
-      lazyObserver.unobserve(media);
+function stopMedia() {
+  if (rapidTimer) {
+    window.clearInterval(rapidTimer);
+    rapidTimer = null;
+  }
+  stage.querySelectorAll("video").forEach((video) => {
+    video.dataset.stopped = "1";
+    video.pause();
+    video.removeAttribute("src");
+    video.load();
+  });
+}
+
+function preloadNeighbours() {
+  [currentIndex + 1, currentIndex + 2].forEach((index) => {
+    const scene = story[index];
+    if (!scene) return;
+    const list = scene.media || (scene.items || []).map((item) => item.media);
+    (list || []).forEach((media) => {
+      if (media.kind === "image") {
+        const image = new Image();
+        image.src = media.src;
+      }
     });
-  }, { root: stage, rootMargin: "120px" });
-
-  pending.forEach((media) => lazyObserver.observe(media));
+  });
 }
 
 function updateChrome(scene) {
   const number = currentIndex + 1;
   progressBar.style.width = `${(number / story.length) * 100}%`;
-  progressLabel.textContent = `${number} / ${story.length}`;
-  sceneContext.textContent = scene.period ? `${scene.act} · Period ${scene.period}` : scene.act;
+  progressLabel.textContent = `${number}/${story.length}`;
+  sceneContext.textContent = scene.act;
   previousButton.disabled = currentIndex === 0;
   nextButton.disabled = currentIndex === story.length - 1;
-  nextButton.querySelector("span:first-child").textContent = currentIndex === story.length - 1 ? "End" : "Next";
-  tapHint.textContent = currentIndex === story.length - 1 ? "End of prototype" : "Tap the story to continue";
+  experience.dataset.tone = scene.tone || "default";
 }
 
 function renderScene(direction = "next") {
   const scene = story[currentIndex];
   const renderer = renderers[scene.type];
+  if (!renderer || !sceneTypes.includes(scene.type)) throw new Error(`Unsupported scene type: ${scene.type}`);
 
-  if (!renderer || !sceneTypes.includes(scene.type)) {
-    throw new Error(`Unsupported scene type: ${scene.type}`);
-  }
-
-  const element = createElement("article", `scene scene--${scene.type} is-entering-${direction}`);
+  stopMedia();
+  const element = el("article", `scene scene--${scene.type} is-entering-${direction}`);
   element.dataset.sceneId = scene.id;
-  renderer(scene, element);
+  try {
+    renderer(scene, element);
+  } catch (error) {
+    console.warn("Scene failed to render", scene.id, error);
+  }
   stage.replaceChildren(element);
   updateChrome(scene);
-  observeLazyMedia(element);
-  document.title = `${scene.title} — Anniversary 2026`;
+  preloadNeighbours();
+  document.title = "Anniversary 2026";
   window.history.replaceState({ sceneIndex: currentIndex }, "", `#${scene.id}`);
 }
 
 function goToScene(nextIndex) {
-  if (isTransitioning || nextIndex < 0 || nextIndex >= story.length || nextIndex === currentIndex) return;
-  isTransitioning = true;
-
-  const direction = nextIndex > currentIndex ? "next" : "previous";
-  const currentScene = stage.querySelector(".scene");
-  currentScene?.classList.add(`is-leaving-${direction}`);
-
-  window.setTimeout(() => {
-    currentIndex = nextIndex;
-    renderScene(direction);
-    isTransitioning = false;
-  }, 190);
+  if (nextIndex < 0 || nextIndex >= story.length || nextIndex === currentIndex) return;
+  lastDirection = nextIndex > currentIndex ? "next" : "previous";
+  currentIndex = nextIndex;
+  renderScene(lastDirection);
 }
 
 previousButton.addEventListener("click", () => goToScene(currentIndex - 1));
 nextButton.addEventListener("click", () => goToScene(currentIndex + 1));
 
 stage.addEventListener("click", (event) => {
-  if (event.target.closest("button, a, video")) return;
-  const stageBounds = stage.getBoundingClientRect();
-  const tapPosition = (event.clientX - stageBounds.left) / stageBounds.width;
-  goToScene(tapPosition < 0.25 ? currentIndex - 1 : currentIndex + 1);
+  if (event.target.closest("button, a")) return;
+  const bounds = stage.getBoundingClientRect();
+  const x = (event.clientX - bounds.left) / bounds.width;
+  const onVideo = event.target.closest("video");
+  if (x < 0.22) return goToScene(currentIndex - 1);
+  if (x > 0.78) return goToScene(currentIndex + 1);
+  if (onVideo) return; // native controls handle taps inside the video
+  goToScene(currentIndex + 1);
 });
 
+let touchStart = null;
+stage.addEventListener("touchstart", (event) => {
+  const touch = event.changedTouches[0];
+  touchStart = { x: touch.clientX, y: touch.clientY };
+}, { passive: true });
+stage.addEventListener("touchend", (event) => {
+  if (!touchStart) return;
+  const touch = event.changedTouches[0];
+  const dx = touch.clientX - touchStart.x;
+  const dy = touch.clientY - touchStart.y;
+  touchStart = null;
+  if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) {
+    goToScene(currentIndex + (dx < 0 ? 1 : -1));
+    stage.dataset.swiped = "1";
+    window.setTimeout(() => delete stage.dataset.swiped, 350);
+  }
+}, { passive: true });
+stage.addEventListener("click", (event) => {
+  if (stage.dataset.swiped) event.stopImmediatePropagation();
+}, true);
+
 window.addEventListener("keydown", (event) => {
-  if (["ArrowRight", "Enter", " "].includes(event.key)) {
+  if (["ArrowRight", "Enter", "PageDown"].includes(event.key) || (event.key === " " && !event.target.closest?.("video, button"))) {
     event.preventDefault();
     goToScene(currentIndex + 1);
   }
-  if (["ArrowLeft", "Backspace"].includes(event.key)) {
+  if (["ArrowLeft", "Backspace", "PageUp"].includes(event.key)) {
     event.preventDefault();
     goToScene(currentIndex - 1);
   }
@@ -239,6 +350,10 @@ window.addEventListener("keydown", (event) => {
 window.addEventListener("hashchange", () => {
   const requestedIndex = getInitialIndex();
   if (requestedIndex !== currentIndex) goToScene(requestedIndex);
+});
+
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden) stage.querySelectorAll("video").forEach((video) => video.pause());
 });
 
 renderScene();
