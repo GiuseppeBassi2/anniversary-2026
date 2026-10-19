@@ -36,6 +36,7 @@ const make = (act) => ({
 const a1 = make(ACT1);
 const a2 = make(ACT2);
 const a3 = make(ACT3);
+const extra = make("Extra videos");
 
 export const story = [
   // ───────────────────────── ACT I ─────────────────────────
@@ -234,4 +235,57 @@ export const story = [
   a3.media([photo("F", 47)], { slug: "final-a", tone: "final", lines: ["I want you in it."] }),
   a3.media([photo("F", 47)], { slug: "final-b", tone: "final", lines: ["Happy anniversary, Min."] }),
   a3.text({ slug: "final-date", tone: "night", title: "26.09.2026", lines: ["— Giuseppe"], last: true }),
+
+
+  // EXTRA VIDEOS — clips not included in the main story
+  ...[
+    ["A", 11],
+    ["A", 24],
+    ["A", 41],
+    ["A", 44],
+    ["A", 61],
+    ["B", 4],
+    ["B", 7],
+    ["B", 15],
+    ["C", 20],
+    ["D", 17],
+    ["D", 18],
+    ["D", 21],
+    ["D", 25],
+    ["D", 26],
+    ["D", 27],
+    ["D", 28],
+    ["D", 30],
+    ["D", 32],
+    ["D", 49],
+    ["D", 59],
+    ["D", 60],
+    ["D", 61],
+    ["F", 7],
+    ["F", 8],
+    ["F", 11],
+    ["F", 12],
+    ["F", 14],
+    ["F", 18],
+    ["F", 19],
+    ["F", 20],
+    ["F", 21],
+    ["F", 23],
+    ["F", 28],
+    ["F", 29],
+    ["F", 33],
+    ["F", 35],
+    ["F", 36],
+    ["F", 49],
+    ["F", 51],
+    ["F", 59],
+    ["F", 60],
+    ["F", 66],
+    ["F", 69],
+    ["F", 70],
+    ["F", 74],
+    ["F", 80],
+  ].map(([folder, n]) => extra.video(video(folder, n), {
+    slug: `extra-video-${folder.toLowerCase()}-${pad(n)}`,
+  })),
 ];
