@@ -255,7 +255,7 @@ export const story = [
   a6.video(video("F", 31), { slug: "pool-outdoor", lines: ["Sooo cool mia bambina god of water 🌊👑😍", "🏊‍♀️💦🧜‍♀️❤️"], effect: "pool-pop" }),
   a6.media([photo("F", 32), video("F", 33)], { slug: "pool-night", layout: "diag-two", lines: ["Moooolto furba faces 😏😂", "We are so stupid together 🤪❤️"], effect: "furba-pop" }),
   a6.media([video("F", 35), video("F", 36)], { slug: "car-faces", layout: "diag-two", lines: ["Per favore amore, I want to travel with you like this forever 🥺🚗🌾❤️", "🌾😍🌾"], effect: "hay-pop" }),
-  a6.media([photo("F", 9), video("F", 10)], { slug: "car-snack-sleep", layout: "side-two", lines: ["Please amore don’t stop singing 🥺🎤😍❤️", "🥰💕🎶"], effect: "eyes-pop" }),
+  a6.media([photo("F", 9), video("F", 10), video("F", 30)], { slug: "car-snack-sleep", lines: ["Please amore don’t stop singing 🥺🎤😍❤️", "🥰💕🎶"], effect: "eyes-pop" }),
 
   // PISA
   a6.media([photo("F", 38)], { slug: "pisa", lines: ["E! Also Pisa! How is possible so many things! 🗼😍🤯", "❤️💕💖💗💘💝🥰"], effect: "love-pop" }),
@@ -267,18 +267,16 @@ export const story = [
   a6.media([photo("F", 43), photo("F", 44)], { slug: "spa", lines: ["SPA day 🧖‍♀️✨", "My bella relaxed like a queen 👑🥹❤️"], effect: "spa-pop" }),
 
   // LAGO DI GARDA: Riva, Tenno, Limone
-  a6.media([photo("F", 46), video("F", 30)], { slug: "road-lake", lines: ["Next stop: Lago di Garda 🚗💙", "Navigator Min: asleep 😴😂"], effect: "sleepy-pop" }),
-  a6.video(video("F", 50), { slug: "riva-del-garda", lines: ["My bella in Riva del Garda with papere 🦆💙🏞️", "🥹❤️"], effect: "lake-pop" }),
+  a6.media([video("F", 50), photo("F", 46)], { slug: "riva-del-garda", layout: "diag-two", lines: ["My bella in Riva del Garda with papere 🦆💙🏞️", "🥹❤️"], effect: "lake-pop" }),
   a6.media([photo("F", 48)], { slug: "riva-playground", lines: ["Ei tu! Molto bambina 😂🤣🐰🥰"], effect: "laugh-pop" }),
   a6.media([photo("F", 47), video("F", 49)], { slug: "riva-kisses", layout: "diag-two", lines: ["Blue couple 💙😘", "Turn the volume up 🔊 I love this video so much for what she says 🥹❤️"], effect: "volume-pop" }),
-  a6.media([photo("F", 52), video("F", 53)], { slug: "lago-di-tenno", lines: ["Lago di Tenno 💙🏔️", "Cutest bambina by the lake 🥹❤️"], effect: "lake-pop" }),
-  a6.media([photo("F", 54), video("F", 51)], { slug: "tenno-gelato", layout: "side-two", lines: ["Snack time 😋", "and gelato in blue 🍦💙❤️"], effect: "gelato-pop" }),
-  a6.media([photo("F", 39), photo("F", 55)], { slug: "baking-cookies", lines: ["Min baking 🍪👩‍🍳", "Me supervising... eating 😂❤️"], effect: "food-pop" }),
-  a6.media([photo("F", 56), photo("F", 57)], { slug: "limone", lines: ["Limone sul Garda 🍋😍", "My bella with a lemon 🥹❤️"], effect: "lemon-pop" }),
-  a6.media([photo("F", 58), photo("F", 62)], { slug: "italy-leaning", lines: ["Me, leaning on my favorite person 🥹❤️"], effect: "love-pop" }),
+  a6.media([photo("F", 52), video("F", 53)], { slug: "lago-di-tenno", layout: "diag-two", lines: ["Mia bellissima regina on the Lake Tenno 👑💙🏔️🥹❤️"], effect: "lake-pop" }),
+  a6.media([photo("F", 54), video("F", 51)], { slug: "tenno-gelato", layout: "diag-two", lines: ["Buonissimo food with my bella... 😋🍦💙❤️"], effect: "gelato-pop" }),
+  a6.media([photo("F", 39), photo("F", 55)], { slug: "baking-cookies", lines: ["But I prefer to eat Min’s food 😋🍪👩‍🍳❤️"], effect: "food-pop" }),
+  a6.media([photo("F", 56), photo("F", 57)], { slug: "limone", lines: ["Beautiful model with lemon 🍋📸😍❤️"], effect: "lemon-pop" }),
 
   // ───────────────── ACT VII · PARIS AND NOW ─────────────────────────
-  a7.text({ slug: "paris", kicker: "Also", title: "Paris.", lines: ["Because why not."] }),
+  a7.flight({ slug: "flight-paris", from: "Italy", to: "Paris", layout: "destination-chapter", kicker: "Chapter six", title: "Paris", landmarks: "italy2" }),
 
   // JUL 24: white shirt, travel day
   a7.video(video("F", 59), { slug: "paris-airport", lines: ["Airport.", "Tired. Excited."] }),
@@ -306,6 +304,7 @@ export const story = [
   // JUL 27: grey shirt, last day
   a7.media([photo("F", 76), photo("F", 77)], { slug: "paris-last-day", lines: ["Last day.", "Dinner. Dessert. Same priorities."] }),
   a7.media([photo("F", 82)], { slug: "paris-tired", lines: ["Tired. Happy.", "Still leaning on each other."] }),
+  a7.media([photo("F", 58), photo("F", 62)], { slug: "italy-leaning", lines: ["Me, leaning on my favorite person 🥹❤️"], effect: "love-pop" }),
 
   // MANY MINNIES
   a7.text({ slug: "minnies-intro", kicker: "Field guide", title: "The many Minnies.", lines: ["Quick. Don’t blink."] }),

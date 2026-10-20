@@ -7,10 +7,18 @@ const photos = [
   [commons("Torre di Pisa, Pisa, Toscana, Italia.jpg"), "Torre pendente di Pisa", "PISA"],
 ];
 
+const parisPhotos = [
+  [commons("Eiffel Tower sunset, Paris July 2013.jpg"), "Tour Eiffel au coucher du soleil", "TOUR EIFFEL", "10% center"],
+  [commons("Louvre Courtyard, Looking West.jpg"), "Pyramide du Louvre a l'heure bleue", "LOUVRE"],
+  [commons("Arc de Triomphe de l'Étoile at night vertical fix.jpg"), "Arc de Triomphe a la tombee de la nuit", "ARC DE TRIOMPHE"],
+  [commons("Basilique du Sacré-Cœur de Montmartre - Paris - GT-01 - 2024.jpg"), "Basilique du Sacre-Coeur a Montmartre", "SACRÉ-CŒUR"],
+];
+
 export function renderItalyAgainArt(from, to) {
-  const figures = photos.map(([src, alt, label]) => `
+  const set = to === "Paris" ? parisPhotos : photos;
+  const figures = set.map(([src, alt, label, pos]) => `
       <figure class="destination-photo">
-        <img src="${src}" alt="${alt}" loading="eager">
+        <img src="${src}" alt="${alt}" loading="eager"${pos ? ` style="object-position:${pos}"` : ""}>
         <figcaption>${label}</figcaption>
       </figure>`).join("");
   return `<div class="art art--flight art--destination art--italy">
