@@ -25,6 +25,20 @@
 .scene--travel-pop .scene__media::after,
 .scene--eyes-pop .scene__media::before,
 .scene--eyes-pop .scene__media::after,
+.scene--sleepy-pop .scene__media::before,
+.scene--sleepy-pop .scene__media::after,
+.scene--pool-pop .scene__media::before,
+.scene--pool-pop .scene__media::after,
+.scene--lemon-pop .scene__media::before,
+.scene--lemon-pop .scene__media::after,
+.scene--lake-pop .scene__media::before,
+.scene--lake-pop .scene__media::after,
+.scene--art-pop .scene__media::before,
+.scene--art-pop .scene__media::after,
+.scene--naples-pop .scene__media::before,
+.scene--naples-pop .scene__media::after,
+.scene--spa-pop .scene__media::before,
+.scene--spa-pop .scene__media::after,
 .scene--furba-pop .scene__media::before,
 .scene--furba-pop .scene__media::after {
   position: absolute; z-index: 10; pointer-events: none;
@@ -60,3 +74,17 @@
 .scene--eyes-pop .scene__media::after { content: "💖✨"; right: 3%; bottom: 6%; animation-delay: -.6s; }
 .scene--furba-pop .scene__media::before { content: "😏🦊"; left: 3%; top: 4%; }
 .scene--furba-pop .scene__media::after { content: "😂💕"; right: 3%; bottom: 6%; animation-delay: -.6s; }
+.scene--sleepy-pop .scene__media::before { content: "😴💤"; left: 3%; top: 4%; }
+.scene--sleepy-pop .scene__media::after { content: "🥰🚗"; right: 3%; bottom: 6%; animation-delay: -.6s; }
+.scene--pool-pop .scene__media::before { content: "🏊‍♀️💦"; left: 3%; top: 4%; }
+.scene--pool-pop .scene__media::after { content: "🧜‍♀️✨"; right: 3%; bottom: 6%; animation-delay: -.6s; }
+.scene--lemon-pop .scene__media::before { content: "🍋😍"; left: 3%; top: 4%; }
+.scene--lemon-pop .scene__media::after { content: "✨🍋"; right: 3%; bottom: 6%; animation-delay: -.6s; }
+.scene--lake-pop .scene__media::before { content: "🏞️💙"; left: 3%; top: 4%; }
+.scene--lake-pop .scene__media::after { content: "☀️🥰"; right: 3%; bottom: 6%; animation-delay: -.6s; }
+.scene--art-pop .scene__media::before { content: "🖼️🎨"; left: 3%; top: 4%; }
+.scene--art-pop .scene__media::after { content: "😂✨"; right: 3%; bottom: 6%; animation-delay: -.6s; }
+.scene--naples-pop .scene__media::before { content: "🍕🔥"; left: 3%; top: 4%; }
+.scene--naples-pop .scene__media::after { content: "😋🇮🇹"; right: 3%; bottom: 6%; animation-delay: -.6s; }
+.scene--spa-pop .scene__media::before { content: "🧖‍♀️✨"; left: 3%; top: 4%; }
+.scene--spa-pop .scene__media::after { content: "💆‍♀️❤️"; right: 3%; bottom: 6%; animation-delay: -.6s; }
