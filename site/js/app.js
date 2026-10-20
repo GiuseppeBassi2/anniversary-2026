@@ -1,5 +1,5 @@
-import { sceneTypes, story } from "./story.js?v=20261019j";
-import { renderArt, renderFlightArt } from "./art.js?v=20261019k";
+import { sceneTypes, story } from "./story.js?v=20261019m";
+import { renderArt, renderFlightArt } from "./art.js?v=20261019m";
 
 const experience = document.querySelector(".experience");
 const stage = document.querySelector("#stage");
@@ -45,6 +45,13 @@ const PRESETS = {
     { l: 0, b: 4, w: 50, h: 46, rot: 1.5 },
     { r: 0, b: 0, w: 50, h: 46, rot: -1.5 },
   ],
+  5: [
+    { l: 0, t: 6, w: 49, h: 43, rot: -2 },
+    { r: 0, t: 8, w: 49, h: 43, rot: 2 },
+    { l: 0, b: 5, w: 32, h: 37, rot: 1 },
+    { l: 34, b: 3, w: 32, h: 37, rot: -1.5 },
+    { r: 0, b: 6, w: 32, h: 37, rot: 1.5 },
+  ],
 };
 
 function dumpPreset(count) {
@@ -62,7 +69,7 @@ function dumpPreset(count) {
 
 function presetFor(scene) {
   const count = scene.media.length;
-  if (scene.layout === "dump" || count > 4) return dumpPreset(count);
+  if (scene.layout === "dump" || count > 5) return dumpPreset(count);
   return PRESETS[count] || dumpPreset(count);
 }
 
