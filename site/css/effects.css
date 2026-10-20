@@ -1,0 +1,62 @@
+/* extra emoji effects (same pattern as styles.css) */
+.scene--laugh-pop .scene__media::before,
+.scene--laugh-pop .scene__media::after,
+.scene--carrot-pop .scene__media::before,
+.scene--carrot-pop .scene__media::after,
+.scene--church-pop .scene__media::before,
+.scene--church-pop .scene__media::after,
+.scene--uffa-pop .scene__media::before,
+.scene--uffa-pop .scene__media::after,
+.scene--volume-pop .scene__media::before,
+.scene--volume-pop .scene__media::after,
+.scene--angry-cute .scene__media::before,
+.scene--angry-cute .scene__media::after,
+.scene--drunk-pop .scene__media::before,
+.scene--drunk-pop .scene__media::after,
+.scene--bbq-pop .scene__media::before,
+.scene--bbq-pop .scene__media::after,
+.scene--skyline-pop .scene__media::before,
+.scene--skyline-pop .scene__media::after,
+.scene--gelato-pop .scene__media::before,
+.scene--gelato-pop .scene__media::after,
+.scene--kiss-pop .scene__media::before,
+.scene--kiss-pop .scene__media::after,
+.scene--travel-pop .scene__media::before,
+.scene--travel-pop .scene__media::after,
+.scene--eyes-pop .scene__media::before,
+.scene--eyes-pop .scene__media::after,
+.scene--furba-pop .scene__media::before,
+.scene--furba-pop .scene__media::after {
+  position: absolute; z-index: 10; pointer-events: none;
+  font-size: clamp(1.7rem, 7vw, 2.5rem);
+  filter: drop-shadow(0 3px 2px rgba(50, 40, 30, .16));
+  animation: duck-pop 1.4s ease-in-out infinite alternate;
+}
+.scene--laugh-pop .scene__media::before { content: "😂🤣"; left: 3%; top: 4%; }
+.scene--laugh-pop .scene__media::after { content: "🤭😹"; right: 3%; bottom: 6%; animation-delay: -.6s; }
+.scene--carrot-pop .scene__media::before { content: "🥕😂"; left: 3%; top: 4%; }
+.scene--carrot-pop .scene__media::after { content: "🐰🤣"; right: 3%; bottom: 6%; animation-delay: -.6s; }
+.scene--church-pop .scene__media::before { content: "⛪😂"; left: 3%; top: 4%; }
+.scene--church-pop .scene__media::after { content: "🕯️🤣"; right: 3%; bottom: 6%; animation-delay: -.6s; }
+.scene--uffa-pop .scene__media::before { content: "😤🙄"; left: 3%; top: 4%; }
+.scene--uffa-pop .scene__media::after { content: "🥰❤️"; right: 3%; bottom: 6%; animation-delay: -.6s; }
+.scene--volume-pop .scene__media::before { content: "🔊✨"; left: 3%; top: 4%; }
+.scene--volume-pop .scene__media::after { content: "🎧❤️"; right: 3%; bottom: 6%; animation-delay: -.6s; }
+.scene--angry-cute .scene__media::before { content: "😡🥰"; left: 3%; top: 4%; }
+.scene--angry-cute .scene__media::after { content: "😂💕"; right: 3%; bottom: 6%; animation-delay: -.6s; }
+.scene--drunk-pop .scene__media::before { content: "🥴😏"; left: 3%; top: 4%; }
+.scene--drunk-pop .scene__media::after { content: "🤫💋"; right: 3%; bottom: 6%; animation-delay: -.6s; }
+.scene--bbq-pop .scene__media::before { content: "🔥🥩"; left: 3%; top: 4%; }
+.scene--bbq-pop .scene__media::after { content: "👩‍🍳❤️"; right: 3%; bottom: 6%; animation-delay: -.6s; }
+.scene--skyline-pop .scene__media::before { content: "🌃✨"; left: 3%; top: 4%; }
+.scene--skyline-pop .scene__media::after { content: "🥹❤️"; right: 3%; bottom: 6%; animation-delay: -.6s; }
+.scene--gelato-pop .scene__media::before { content: "🍦😍"; left: 3%; top: 4%; }
+.scene--gelato-pop .scene__media::after { content: "😂✨"; right: 3%; bottom: 6%; animation-delay: -.6s; }
+.scene--kiss-pop .scene__media::before { content: "💋😘"; left: 3%; top: 4%; }
+.scene--kiss-pop .scene__media::after { content: "💕✨"; right: 3%; bottom: 6%; animation-delay: -.6s; }
+.scene--travel-pop .scene__media::before { content: "🥹❤️"; left: 3%; top: 4%; }
+.scene--travel-pop .scene__media::after { content: "😂✨"; right: 3%; bottom: 6%; animation-delay: -.6s; }
+.scene--eyes-pop .scene__media::before { content: "😍🥰"; left: 3%; top: 4%; }
+.scene--eyes-pop .scene__media::after { content: "💖✨"; right: 3%; bottom: 6%; animation-delay: -.6s; }
+.scene--furba-pop .scene__media::before { content: "😏🦊"; left: 3%; top: 4%; }
+.scene--furba-pop .scene__media::after { content: "😂💕"; right: 3%; bottom: 6%; animation-delay: -.6s; }

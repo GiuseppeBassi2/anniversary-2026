@@ -1,5 +1,6 @@
-import { sceneTypes, story } from "./story.js?v=20261020c";
-import { renderArt, renderFlightArt } from "./art.js?v=20261020c";
+import { sceneTypes, story } from "./story.js?v=20261020d";
+import { renderArt, renderFlightArt } from "./art.js?v=20261020d";
+import { renderItalyAgainArt } from "./italy2.js?v=20261020d";
 
 const experience = document.querySelector(".experience");
 const stage = document.querySelector("#stage");
@@ -76,6 +77,10 @@ function presetFor(scene) {
   if (scene.layout === "feature-video") return [
     { l: 0, t: 0, w: 100, h: 50, rot: -1 },
     { l: 21, b: 0, w: 58, h: 50, rot: 1 },
+  ];
+  if (scene.layout === "side-two") return [
+    { l: 0, t: 3, w: 49, h: 94, rot: -1.5 },
+    { r: 0, t: 3, w: 49, h: 94, rot: 1.5 },
   ];
   if (scene.layout === "stacked-wide") return [
     { l: 3, t: 1, w: 94, h: 47, rot: -1 },
@@ -218,7 +223,7 @@ function renderVideo(scene, element) {
 
 function renderFlight(scene, element) {
   const box = el("div", "scene__media");
-  box.innerHTML = renderFlightArt(scene.from, scene.to, scene.landmarks);
+  box.innerHTML = scene.landmarks === "italy2" ? renderItalyAgainArt(scene.from, scene.to) : renderFlightArt(scene.from, scene.to, scene.landmarks);
   if (scene.layout === "destination-chapter") {
     element.classList.add("scene--destination-chapter");
     element.append(createCopy(scene), box);
