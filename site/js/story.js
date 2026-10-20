@@ -76,7 +76,7 @@ export const story = [
   a1.text({ slug: "food-happiness", lines: ["My bellissima is happiest when she tries new food... 😋❤️"] }),
   a1.media([photo("A", 15)], { slug: "shake-shack", lines: ["My stellina loves burgers 🍔🥰"] , effect: "food-pop"}),
   a1.media([photo("A", 60)], { slug: "grande-sandwich", tone: "warm", lines: ["But even more, grande sandwich 🥪😍", "Moooolto carina, mia regina 👑💕"] , effect: "food-pop"}),
-  a1.media([photo("A", 42)], { slug: "beaver-tails", tone: "food-rise", effect: "food-rise", lines: ["But even more, she loves BeaverTails 🦦🍩💖"] }),
+  a1.media([photo("A", 42)], { slug: "beaver-tails", tone: "food-rise", effect: "food-rise", lines: ["But even more, she loves BeaverTails \u{1F9AB}🍩💖"] }),
   a1.media([photo("A", 43)], { slug: "cinnaholic", tone: "food-peak", effect: "food-peak", lines: ["And then... Cinnaholic 🤯🍥💖", "My bellissima has never been happier ✨"] }),
   a1.media([photo("A", 55)], { slug: "wine-bambina", lines: ["But sometimes she becomes drunk bambina 🍷🥴"] , effect: "love-pop"}),
   a1.media([photo("A", 50)], { slug: "drunk-bambina", lines: ["Compleeeetely drunk bambina after a big beer... 🍺🥴"] }),
@@ -276,7 +276,7 @@ export const story = [
   a6.media([photo("F", 56), photo("F", 57)], { slug: "limone", lines: ["Limone sul Garda 🍋😍", "My bella with a lemon 🥹❤️"], effect: "lemon-pop" }),
   a6.media([photo("F", 58), photo("F", 62)], { slug: "italy-leaning", lines: ["Me, leaning on my favorite person 🥹❤️"], effect: "love-pop" }),
 
-  // ───────────────────────── ACT VII · PARIS AND NOW ─────────────────────────
+  // ───────────────── ACT VII · PARIS AND NOW ─────────────────────────
   a7.text({ slug: "paris", kicker: "Also", title: "Paris.", lines: ["Because why not."] }),
   a7.video(video("F", 63)),
   a7.media([photo("F", 65)], { lines: ["My favorite exhibit."] }),
