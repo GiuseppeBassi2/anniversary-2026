@@ -1,6 +1,7 @@
-import { sceneTypes, story } from "./story.js?v=20261020g";
-import { renderArt, renderFlightArt } from "./art.js?v=20261020g";
-import { renderItalyAgainArt } from "./italy2.js?v=20261020g";
+// story.js is always fetched fresh (no stale cache between edits)
+const { sceneTypes, story } = await import(`./story.js?t=${Date.now()}`);
+import { renderArt, renderFlightArt } from "./art.js?v=20261020h";
+import { renderItalyAgainArt } from "./italy2.js?v=20261020h";
 
 const experience = document.querySelector(".experience");
 const stage = document.querySelector("#stage");
