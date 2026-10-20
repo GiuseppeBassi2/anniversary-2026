@@ -246,7 +246,7 @@ function familyLineup() {
 // Milan-duomo-front-facade.jpg; Fontana_di_Trevi_front_view.jpg.
 // Korea: Incheon-international-airport.jpg; Seoul,_South_Korea_(Unsplash).jpg;
 // Cherry_blossoms_in_Seoul_Forest,_South_Korea2.jpg;
-// Haedong_Yonggungsa_Temple,_Busan_-_HaedongYonggungsa2707.jpg.
+// Haedong_Yonggungsa_Temple_sunset_view.jpg.
 const destinationPhotos = {
   italy: [
     ["https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Arena_di_Verona_fuori_2022_%281%29.jpg/330px-Arena_di_Verona_fuori_2022_%281%29.jpg", "Arena di Verona", "VERONA", ""],
@@ -258,7 +258,7 @@ const destinationPhotos = {
     ["https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Incheon-international-airport.jpg/330px-Incheon-international-airport.jpg", "Aeroporto di Incheon", "INCHEON", ""],
     ["https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Seoul%2C_South_Korea_%28Unsplash%29.jpg/330px-Seoul%2C_South_Korea_%28Unsplash%29.jpg", "Seoul", "SEOUL", ""],
     ["https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/Cherry_blossoms_in_Seoul_Forest%2C_South_Korea2.jpg/330px-Cherry_blossoms_in_Seoul_Forest%2C_South_Korea2.jpg", "Ciliegi in fiore in Corea", "BLOSSOMS", ""],
-    ["https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Haedong_Yonggungsa_Temple%2C_Busan_-_HaedongYonggungsa2707.jpg/330px-Haedong_Yonggungsa_Temple%2C_Busan_-_HaedongYonggungsa2707.jpg", "Tempio Haedong Yonggungsa a Busan", "BUSAN", ""],
+    ["https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Haedong_Yonggungsa_Temple_sunset_view.jpg/330px-Haedong_Yonggungsa_Temple_sunset_view.jpg", "Tempio Haedong Yonggungsa sul mare a Busan", "BUSAN", " destination-photo--busan"],
   ],
 };
 
