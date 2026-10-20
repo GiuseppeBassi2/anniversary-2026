@@ -241,38 +241,34 @@ function familyLineup() {
 }
 
 
-// CC0 photographs from Wikimedia Commons. Source file pages:
-// Italy: Arena_di_Verona_fuori_2022_(1).jpg; 0Bergamo_città_alta-colli_di_Bergamo.jpg;
-// Milan-duomo-front-facade.jpg; Fontana_di_Trevi_front_view.jpg.
-// Korea: Haedong_Yonggungsa_Temple_sunset_view.jpg; Gyeongbokgung_Palace_at_Night.jpg;
-// Bukchon-ro_11-gil_street_with_hanok_houses_at_blue_hour_in_Bukchon_Hanok_Village_Seoul.jpg;
-// Namsan_Tower_sunset,_Seoul.jpg.
+// Destination photographs are from Wikimedia Commons files dedicated to the public domain.
+const commons = (filename) => `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(filename)}?width=500`;
 const destinationPhotos = {
   italy: [
-    ["https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Verona_cityscape_sunny.jpg/500px-Verona_cityscape_sunny.jpg", "Verona e il fiume Adige", "VERONA", ""],
-    ["https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Sunrise_at_Bergamo_old_town%2C_Lombardy%2C_Italy.jpg/500px-Sunrise_at_Bergamo_old_town%2C_Lombardy%2C_Italy.jpg", "Bergamo Alta all’alba", "BERGAMO", "", ["hozinja", "https://commons.wikimedia.org/wiki/File:Sunrise_at_Bergamo_old_town,_Lombardy,_Italy.jpg", "CC BY 2.0", "https://creativecommons.org/licenses/by/2.0/"]],
-    ["https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Milan-duomo-front-facade.jpg/330px-Milan-duomo-front-facade.jpg", "Duomo di Milano", "MILANO", ""],
-    ["https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Fontana_di_Trevi_front_view.jpg/330px-Fontana_di_Trevi_front_view.jpg", "Fontana di Trevi a Roma", "ROMA", ""],
+    [commons("Verona cityscape sunny.jpg"), "Verona e il fiume Adige", "VERONA", ""],
+    [commons("Bergamo, Piazza Vecchia.jpg"), "Piazza Vecchia a Bergamo", "BERGAMO", ""],
+    [commons("Milan-duomo-front-facade.jpg"), "Duomo di Milano", "MILANO", ""],
+    [commons("Fontana di Trevi front view.jpg"), "Fontana di Trevi a Roma", "ROMA", ""],
   ],
   korea: [
-    ["https://commons.wikimedia.org/wiki/Special:FilePath/Haedong_Yonggungsa_Temple_sunset_view.jpg?width=500", "Tempio Haedong Yonggungsa sul mare a Busan", "BUSAN · HAEDONG", " destination-photo--busan"],
-    ["https://commons.wikimedia.org/wiki/Special:FilePath/Gyeongbokgung_Palace_at_Night.jpg?width=500", "Palazzo Gyeongbokgung illuminato a Seoul", "GYEONGBOKGUNG", "", ["Lunisaa", "https://commons.wikimedia.org/wiki/File:Gyeongbokgung_Palace_at_Night.jpg", "CC BY 4.0", "https://creativecommons.org/licenses/by/4.0/"]],
-    ["https://commons.wikimedia.org/wiki/Special:FilePath/Bukchon-ro_11-gil_street_with_hanok_houses_at_blue_hour_in_Bukchon_Hanok_Village_Seoul.jpg?width=500", "Vicolo tradizionale di Bukchon a Seoul", "BUKCHON", "", ["Basile Morin", "https://commons.wikimedia.org/wiki/File:Bukchon-ro_11-gil_street_with_hanok_houses_at_blue_hour_in_Bukchon_Hanok_Village_Seoul.jpg", "CC BY-SA 4.0", "https://creativecommons.org/licenses/by-sa/4.0/"]],
-    ["https://commons.wikimedia.org/wiki/Special:FilePath/Namsan_Tower_sunset%2C_Seoul.jpg?width=500", "N Seoul Tower al tramonto", "N SEOUL TOWER", "", ["Rtflakfizer", "https://commons.wikimedia.org/wiki/File:Namsan_Tower_sunset,_Seoul.jpg", "CC BY-SA 4.0", "https://creativecommons.org/licenses/by-sa/4.0/"]],
+    [commons("Haedong Yonggungsa Temple sunset view.jpg"), "Tempio Haedong Yonggungsa sul mare a Busan", "BUSAN · HAEDONG", " destination-photo--busan"],
+    [commons("Gyeongbokgung(palace) Geunjeongjeon(hall).jpg"), "Palazzo Gyeongbokgung a Seoul", "GYEONGBOKGUNG", ""],
+    [commons("Bukchon Hanok Village 06.jpg"), "Case hanok tradizionali a Bukchon", "BUKCHON", ""],
+    [commons("Namsan Tower, Seoul - Namsan2299.jpg"), "N Seoul Tower illuminata di notte", "N SEOUL TOWER", ""],
   ],
   japan: [
-    ["https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Shinkansen_N700_Z13.jpg/960px-Shinkansen_N700_Z13.jpg", "Treno Shinkansen in Giappone", "TRAINS", ""],
-    ["https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Sakura_and_boats_in_the_Chidorigafuchi_Moat_-_Tokyo%2C_Japan_-_DSC06047.jpg/960px-Sakura_and_boats_in_the_Chidorigafuchi_Moat_-_Tokyo%2C_Japan_-_DSC06047.jpg", "Ciliegi e barche in Giappone", "SAKURA", ""],
-    ["https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Sunset_over_Tokyo_%28Unsplash%29.jpg/500px-Sunset_over_Tokyo_%28Unsplash%29.jpg", "Tramonto sul Giappone", "SUNSET", ""],
-    ["https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Matcha_Soft_Serve_in_Miyajima_01.jpg/500px-Matcha_Soft_Serve_in_Miyajima_01.jpg", "Gelato al matcha in Giappone", "GELATO", "", ["ノボホショコロトソ", "https://commons.wikimedia.org/wiki/File:Matcha_Soft_Serve_in_Miyajima_01.jpg", "CC BY 4.0", "https://creativecommons.org/licenses/by/4.0/"]],
+    [commons("日本庭園から望む大阪城.jpg"), "Castello di Osaka visto dal giardino", "OSAKA CASTLE", ""],
+    [commons("Dotonbori, Osaka, Japan (Unsplash).jpg"), "Dōtonbori illuminata di notte", "DŌTONBORI", ""],
+    [commons("Fushimi Inari-taisha sembon-torii.jpg"), "Torii rossi di Fushimi Inari a Kyoto", "FUSHIMI INARI", ""],
+    [commons("Deer in Nara Park (Unsplash).jpg"), "Cerbiattino nel parco di Nara", "NARA", ""],
   ],
 };
 
 function renderDestinationFlightArt(from, to, kind) {
-  const photos = destinationPhotos[kind].map(([src, alt, label, extraClass, credit]) => `
+  const photos = destinationPhotos[kind].map(([src, alt, label, extraClass]) => `
       <figure class="destination-photo${extraClass}">
         <img src="${src}" alt="${alt}" loading="eager">
-        <figcaption>${label}${credit ? `<span class="destination-credit"><a href="${credit[1]}" target="_blank" rel="noopener noreferrer">© ${credit[0]}</a> · <a href="${credit[3]}" target="_blank" rel="noopener noreferrer">${credit[2]}</a> · cropped</span>` : ""}</figcaption>
+        <figcaption>${label}</figcaption>
       </figure>`).join("");
   return `<div class="art art--flight art--destination art--${kind}">
     <div class="destination-route">
