@@ -1,4 +1,4 @@
-import { sceneTypes, story } from "./story.js?v=20261019d";
+import { sceneTypes, story } from "./story.js?v=20261019e";
 import { renderArt, renderFlightArt } from "./art.js";
 
 const experience = document.querySelector(".experience");
@@ -197,8 +197,13 @@ function renderVideo(scene, element) {
 
 function renderFlight(scene, element) {
   const box = el("div", "scene__media");
-  box.innerHTML = renderFlightArt(scene.from, scene.to);
-  element.append(box, createCopy(scene));
+  box.innerHTML = renderFlightArt(scene.from, scene.to, scene.landmarks);
+  if (scene.layout === "italy-chapter") {
+    element.classList.add("scene--italy-chapter");
+    element.append(createCopy(scene), box);
+  } else {
+    element.append(box, createCopy(scene));
+  }
 }
 
 function renderArtScene(scene, element) {
