@@ -1,4 +1,4 @@
-// Hand-made CSS/SVG scenes for Act III and the flight transitions. No external assets.
+// CSS/SVG scenes for future chapters and flight routes; destination cards use CC0 photographs.
 
 function seeded(seed) {
   let s = seed;
@@ -241,45 +241,53 @@ function familyLineup() {
 }
 
 
-// Real CC0 photos from Wikimedia Commons: Verona (Andrek02), Bergamo (Nazasca),
-// Milano (Skarkkai), Roma (Ypsilon from Finland). See each file page in the links below.
-function renderItalyFlightArt(from, to) {
-  return `<div class="art art--flight art--italy">
-    <div class="italy-route">
+// CC0 photographs from Wikimedia Commons. Source file pages:
+// Italy: Arena_di_Verona_fuori_2022_(1).jpg; 0Bergamo_città_alta-colli_di_Bergamo.jpg;
+// Milan-duomo-front-facade.jpg; Fontana_di_Trevi_front_view.jpg.
+// Korea: Incheon-international-airport.jpg; Seoul,_South_Korea_(Unsplash).jpg;
+// Cherry_blossoms_in_Seoul_Forest,_South_Korea2.jpg;
+// Haedong_Yonggungsa_Temple,_Busan_-_HaedongYonggungsa2707.jpg.
+const destinationPhotos = {
+  italy: [
+    ["https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Arena_di_Verona_fuori_2022_%281%29.jpg/330px-Arena_di_Verona_fuori_2022_%281%29.jpg", "Arena di Verona", "VERONA", ""],
+    ["https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/0Bergamo_citt%C3%A0_alta-colli_di_Bergamo.jpg/330px-0Bergamo_citt%C3%A0_alta-colli_di_Bergamo.jpg", "Bergamo Alta", "BERGAMO", " destination-photo--bergamo"],
+    ["https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Milan-duomo-front-facade.jpg/330px-Milan-duomo-front-facade.jpg", "Duomo di Milano", "MILANO", ""],
+    ["https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Fontana_di_Trevi_front_view.jpg/330px-Fontana_di_Trevi_front_view.jpg", "Fontana di Trevi a Roma", "ROMA", ""],
+  ],
+  korea: [
+    ["https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Incheon-international-airport.jpg/330px-Incheon-international-airport.jpg", "Aeroporto di Incheon", "INCHEON", ""],
+    ["https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Seoul%2C_South_Korea_%28Unsplash%29.jpg/330px-Seoul%2C_South_Korea_%28Unsplash%29.jpg", "Seoul", "SEOUL", ""],
+    ["https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/Cherry_blossoms_in_Seoul_Forest%2C_South_Korea2.jpg/330px-Cherry_blossoms_in_Seoul_Forest%2C_South_Korea2.jpg", "Ciliegi in fiore in Corea", "BLOSSOMS", ""],
+    ["https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Haedong_Yonggungsa_Temple%2C_Busan_-_HaedongYonggungsa2707.jpg/330px-Haedong_Yonggungsa_Temple%2C_Busan_-_HaedongYonggungsa2707.jpg", "Tempio Haedong Yonggungsa a Busan", "BUSAN", ""],
+  ],
+};
+
+function renderDestinationFlightArt(from, to, kind) {
+  const photos = destinationPhotos[kind].map(([src, alt, label, extraClass]) => `
+      <figure class="destination-photo${extraClass}">
+        <img src="${src}" alt="${alt}" loading="eager">
+        <figcaption>${label}</figcaption>
+      </figure>`).join("");
+  return `<div class="art art--flight art--destination art--${kind}">
+    <div class="destination-route">
       <svg viewBox="0 0 320 135" role="img" aria-label="Flight from ${from} to ${to}">
-        <path d="M26 93 Q160 2 294 93" fill="none" stroke="#a76660" stroke-width="1.7" stroke-dasharray="4 7" stroke-linecap="round"/>
-        <circle cx="26" cy="93" r="4.5" fill="#a76660"/><circle cx="294" cy="93" r="4.5" fill="#a76660"/>
-        <g class="plane" fill="none" stroke="#7c4a48" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M26 93 Q160 2 294 93" fill="none" stroke="var(--route-accent)" stroke-width="1.7" stroke-dasharray="4 7" stroke-linecap="round"/>
+        <circle cx="26" cy="93" r="4.5" fill="var(--route-accent)"/><circle cx="294" cy="93" r="4.5" fill="var(--route-accent)"/>
+        <g class="plane" fill="none" stroke="var(--route-dark)" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round">
           <path d="M-10 0 L10 0 L4 -5 M10 0 L4 5 M-10 0 L-13 -5 M-10 0 L-13 5"/>
           <animateMotion dur="5s" repeatCount="indefinite" rotate="auto" path="M26 93 Q160 2 294 93"/>
         </g>
-        <text x="26" y="119" text-anchor="start" class="italy-label">${from.toUpperCase()}</text>
-        <text x="294" y="119" text-anchor="end" class="italy-label">${to.toUpperCase()}</text>
+        <text x="26" y="119" text-anchor="start" class="destination-label">${from.toUpperCase()}</text>
+        <text x="294" y="119" text-anchor="end" class="destination-label">${to.toUpperCase()}</text>
       </svg>
     </div>
-    <div class="italy-photo-grid">
-      <figure class="italy-photo">
-        <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Arena_di_Verona_fuori_2022_%281%29.jpg/330px-Arena_di_Verona_fuori_2022_%281%29.jpg" alt="Arena di Verona" loading="eager">
-        <figcaption>VERONA</figcaption>
-      </figure>
-      <figure class="italy-photo italy-photo--bergamo">
-        <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/0Bergamo_citt%C3%A0_alta-colli_di_Bergamo.jpg/330px-0Bergamo_citt%C3%A0_alta-colli_di_Bergamo.jpg" alt="Bergamo Alta" loading="eager">
-        <figcaption>BERGAMO</figcaption>
-      </figure>
-      <figure class="italy-photo">
-        <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Milan-duomo-front-facade.jpg/330px-Milan-duomo-front-facade.jpg" alt="Duomo di Milano" loading="eager">
-        <figcaption>MILANO</figcaption>
-      </figure>
-      <figure class="italy-photo">
-        <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Fontana_di_Trevi_front_view.jpg/330px-Fontana_di_Trevi_front_view.jpg" alt="Fontana di Trevi a Roma" loading="eager">
-        <figcaption>ROMA</figcaption>
-      </figure>
+    <div class="destination-photo-grid">${photos}
     </div>
   </div>`;
 }
 
 export function renderFlightArt(from, to, landmarks = false) {
-  if (landmarks) return renderItalyFlightArt(from, to);
+  if (landmarks) return renderDestinationFlightArt(from, to, landmarks === "korea" ? "korea" : "italy");
   const path = "M30 150 Q 180 10 330 150";
   return `<div class="art art--flight">
     <svg class="art-svg" viewBox="0 0 360 200" aria-hidden="true">
