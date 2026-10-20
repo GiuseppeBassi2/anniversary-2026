@@ -1,4 +1,4 @@
-import { sceneTypes, story } from "./story.js";
+import { sceneTypes, story } from "./story.js?v=20261019c";
 import { renderArt, renderFlightArt } from "./art.js";
 
 const experience = document.querySelector(".experience");
