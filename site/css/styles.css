@@ -106,7 +106,17 @@ button { color: inherit; font: inherit; }
  .scene--love-pop .scene__media::before,
 .scene--love-pop .scene__media::after,
 .scene--food-pop .scene__media::before,
-.scene--food-pop .scene__media::after {
+.scene--food-pop .scene__media::after,
+.scene--duck-love .scene__media::before,
+.scene--duck-love .scene__media::after,
+.scene--totoro-pop .scene__media::before,
+.scene--totoro-pop .scene__media::after,
+.scene--magic-pop .scene__media::before,
+.scene--magic-pop .scene__media::after,
+.scene--soft-sparkle .scene__media::before,
+.scene--soft-sparkle .scene__media::after,
+.scene--squirrel-pop .scene__media::before,
+.scene--squirrel-pop .scene__media::after {
   position: absolute; z-index: 10; pointer-events: none;
   font-size: clamp(1.7rem, 7vw, 2.5rem);
   filter: drop-shadow(0 3px 2px rgba(50, 40, 30, .16));
@@ -116,6 +126,16 @@ button { color: inherit; font: inherit; }
 .scene--love-pop .scene__media::after { content: "🥰💖"; right: 3%; bottom: 7%; animation-delay: -.6s; }
 .scene--food-pop .scene__media::before { content: "😋💗"; left: 4%; top: 4%; }
 .scene--food-pop .scene__media::after { content: "🍡✨"; right: 3%; bottom: 7%; animation-delay: -.6s; }
+.scene--duck-love .scene__media::before { content: "🦆💕"; left: 3%; top: 4%; }
+.scene--duck-love .scene__media::after { content: "😂❤️"; right: 3%; bottom: 6%; animation-delay: -.5s; }
+.scene--totoro-pop .scene__media::before { content: "🌿💚✨"; left: 3%; top: 5%; }
+.scene--totoro-pop .scene__media::after { content: "🥰🍃"; right: 3%; bottom: 7%; animation-delay: -.65s; }
+.scene--magic-pop .scene__media::before { content: "✨💖"; left: 3%; top: 4%; }
+.scene--magic-pop .scene__media::after { content: "🥹🌟❤️"; right: 3%; bottom: 6%; animation-delay: -.7s; }
+.scene--soft-sparkle .scene__media::before { content: "✨"; left: 3%; top: 4%; }
+.scene--soft-sparkle .scene__media::after { content: "💕"; right: 3%; bottom: 6%; animation-delay: -.65s; }
+.scene--squirrel-pop .scene__media::before { content: "🐿️😂"; left: 3%; top: 4%; }
+.scene--squirrel-pop .scene__media::after { content: "🥰❤️"; right: 3%; bottom: 6%; animation-delay: -.65s; }
 @keyframes duck-pop { from { translate: 0 0; scale: .9; } to { translate: 0 -.6rem; scale: 1.1; } }
 
 /* copy */
@@ -251,8 +271,6 @@ button { color: inherit; font: inherit; }
 .destination-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .destination-photo--busan img { object-position: 72% center; }
 .destination-photo figcaption { position: absolute; inset: auto 0 0; padding: 1.3rem 0.2rem 0.3rem; background: linear-gradient(transparent, rgba(25, 20, 18, .74)); color: #fff; font: 700 0.57rem Inter, sans-serif; letter-spacing: 0.15em; text-align: center; }
-.destination-credit { display: block; margin-top: .18rem; font-size: .42rem; font-weight: 400; letter-spacing: 0; }
-.destination-credit a { color: inherit; text-decoration: underline; text-underline-offset: .1em; }
 
 .leaves { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
 .leaf {
