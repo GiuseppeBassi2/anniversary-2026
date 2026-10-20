@@ -71,21 +71,21 @@ export const story = [
   a1.video(video("A", 40), { lines: ["My master... 👑", "I’m completely your slave 🥵❤️😂"] }),
   a1.media([photo("A", 46), photo("A", 53), photo("A", 54)], { slug: "flower-queen", lines: ["But also my queen 👑💐"] }),
   a1.video(video("A", 47), { lines: ["Cutest girl on the planet 🌎", "my beautiful flower 🌸💖"] }),
-  a1.media([photo("A", 35), photo("A", 19)], { slug: "cool-bambina", lines: ["Also moooolto cool bambina 😎✨"] }),
+  a1.media([photo("A", 35), photo("A", 49)], { slug: "cool-bambina", lines: ["Also moooolto cool bambina 😎✨"] }),
   a1.media([photo("A", 8), video("A", 22), photo("A", 20), photo("A", 45)], {
     slug: "beautiful-angel", lines: ["And the most beautiful angel I’ve ever seen in my life 🥹✨", "I love you so much ❤️"],
   }),
 
-  a1.media([photo("A", 29)], { lines: ["My angel 😇🤍"] }),
   a1.media([photo("A", 37), photo("A", 38)], { lines: ["Beautiful pictures by Giovanni 📸🍁", "💕❤️💕"] }),
   a1.video(video("A", 39)),
-  a1.media([photo("A", 48), photo("A", 49)], { lines: ["Memories from Canada 🍁🇨🇦💕"] }),
-  a1.media([photo("A", 28), photo("A", 57), photo("A", 63)], { slug: "sleeping-on-you", lines: ["And sleeping on you... 😴❤️"] }),
-  a1.video(video("A", 56), { lines: ["Dormissimo bambino boyfriend 😴💤🥰"] }),
-  a1.media([photo("A", 25)], { lines: ["My safe heaven 🥹🐧🤍"] }),
+  a1.media([photo("A", 48), photo("A", 25)], { slug: "safe-heaven", lines: ["My safe heaven 🥹🐧🤍"] }),
+  a1.media([photo("A", 28), photo("A", 57), photo("A", 63), photo("A", 64)], {
+    slug: "dormissimo-photos", lines: ["Dormissimo bambino 😴💤🥰"],
+  }),
+  a1.video(video("A", 56), { lines: ["...Again dormissimo... 😴💤"] }),
   a1.video(video("A", 58), { lines: ["...Again dormissimo... 😴💤"] }),
-  a1.media([video("A", 62), photo("A", 65)], { lines: ["Kitchen experiments."] }),
-  a1.media([photo("A", 64), photo("A", 67)], { lines: ["One last lazy morning.", "Then it was time to pack."] }),
+  a1.media([video("A", 62), photo("A", 65)], { lines: ["Look amore, I’m better than you at cooking 👨‍🍳😏❤️"] }),
+  a1.media([photo("A", 29), photo("A", 67)], { slug: "travel-furba", lines: ["Time to travel with my furba bambina 🧳✈️❤️"] }),
 
   a1.flight({ slug: "flight-italy", from: "Toronto", to: "Italy", lines: ["Now it was my turn."] }),
 
@@ -253,6 +253,7 @@ export const story = [
     ["A", 7],
     ["A", 9],
     ["A", 18],
+    ["A", 19],
     ["A", 26],
     ["A", 27],
     ["A", 30],
