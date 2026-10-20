@@ -73,19 +73,19 @@ export const story = [
   a1.video(video("A", 47), { lines: ["Cutest girl on the planet 🌎", "my beautiful flower 🌸💖"] }),
   a1.media([photo("A", 35), photo("A", 49)], { slug: "cool-bambina", lines: ["Also moooolto cool bambina 😎✨"] }),
   a1.media([photo("A", 8), video("A", 22), photo("A", 20), photo("A", 45)], {
-    slug: "beautiful-angel", lines: ["And the most beautiful angel I’ve ever seen in my life 🥹✨", "I love you so much ❤️"],
+    slug: "beautiful-angel", lines: ["And the most beautiful angel I’ve ever seen in my life 🥹✨", "My motivation ❤️"],
   }),
 
   a1.media([photo("A", 37), photo("A", 38)], { lines: ["Beautiful pictures by Giovanni 📸🍁", "💕❤️💕"] }),
   a1.video(video("A", 39)),
-  a1.media([photo("A", 48), photo("A", 25)], { slug: "safe-heaven", lines: ["My safe heaven 🥹🐧🤍"] }),
+  a1.media([photo("A", 48), photo("A", 25)], { slug: "safe-heaven", lines: ["My safe heaven 🥹🐧🤍", "Can we marry and live like this forever? 💍🥹❤️"] }),
   a1.media([photo("A", 28), photo("A", 57), photo("A", 63), photo("A", 64)], {
     slug: "dormissimo-photos", lines: ["Dormissimo bambino 😴💤🥰"],
   }),
   a1.video(video("A", 56), { lines: ["...Again dormissimo... 😴💤"] }),
-  a1.video(video("A", 58), { lines: ["...Again dormissimo... 😴💤"] }),
+  a1.video(video("A", 58), { lines: ["Scusa amore, tuo bambino molto dormissimo 😂🙄😴❤️"] }),
   a1.media([video("A", 62), photo("A", 65)], { lines: ["Look amore, I’m better than you at cooking 👨‍🍳😏❤️"] }),
-  a1.media([photo("A", 29), photo("A", 67)], { slug: "travel-furba", lines: ["Time to travel with my furba bambina 🧳✈️❤️"] }),
+  a1.media([photo("A", 29), photo("A", 67)], { slug: "travel-furba", lines: ["Time to travel with my furba bambina 😏🤭🧳✈️❤️"] }),
 
   // ITALY I (B)
   a1.flight({ slug: "italy-one", from: "Toronto", to: "Italy", layout: "italy-chapter", kicker: "Chapter two", title: "Italy", landmarks: true }),
@@ -93,7 +93,7 @@ export const story = [
   a1.media([photo("B", 2)], { slug: "mia-regina-church", lines: ["Mia Regina 😍"] }),
   a1.media([photo("B", 3)], { slug: "min-in-verona", lines: ["Min in Verona ❤️"] }),
   a1.media([photo("B", 21)], { slug: "mia-regina-bergamo", lines: ["Mia Regina in Bergamo 🥰"] }),
-  a1.video(video("B", 5), { slug: "stupid-bambini-milano", lines: ["Stupid bambini in Milano 😂❤️"] }),
+  a1.video(video("B", 5), { slug: "stupid-bambini-milano", lines: ["Stupid bambini in Milano 😂❤️", "I know you love me 🥰❤️"] }),
   a1.media([photo("B", 8)], { slug: "min-papera", lines: ["My favourite Min papera 🦆😂🥰"] }),
   a1.video(video("B", 10), { slug: "my-comedian-ducks", lines: ["I love my comedian 😂🤣❤️"] }),
   a1.video(video("B", 9), { slug: "duck-laughter", effect: "duck-chaos", lines: ["😂🤣😂🤣😂🤣😂"] }),
@@ -103,10 +103,10 @@ export const story = [
   a1.media([photo("B", 14)], { slug: "queen-aura-art", lines: ["So much aura, my queen 👑✨😎"] }),
   a1.video(video("B", 6), { slug: "lemon-challenge", lines: ["Amore, can you eat lemon? 🍋😂🤣", "I’m your number one fan 😂❤️"] }),
   a1.video(video("B", 17), { slug: "one-more-kiss", lines: ["Dai amore! You can do! Just one more beautiful kiss 🥹💋❤️"] }),
-  a1.media([photo("B", 19), photo("B", 20)], { slug: "rome-selfies-and-kisses", lines: ["Mirror selfies and kisses.", "In Rome. Obviously."] }),
+  a1.media([photo("B", 19), photo("B", 20)], { slug: "rome-selfies-and-kisses", lines: ["Uffa amore, last day together... 😢💔", "But no worries, we’ll keep in contact every day 📱❤️"] }),
 
   // APART (C)
-  a1.text({ slug: "apart-one", kicker: "Then", title: "And then came the stupid part.", tone: "medium" }),
+  a1.text({ slug: "apart-one", title: "And now the stupid part 😢", tone: "medium" }),
   a1.text({ slug: "apart-one-b", lines: ["You went home.", "I stayed.", "FaceTime got a lot of work."] }),
   a1.media([photo("C", 3), photo("C", 4), photo("C", 7), photo("C", 11)], { lines: ["Most of my favorite moments that month lived in a tiny rectangle."] }),
   a1.media([photo("C", 6)], { lines: ["Ducks.", "In case I forgot."] }),
