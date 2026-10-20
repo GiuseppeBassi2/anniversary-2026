@@ -140,6 +140,15 @@ function createCopy(scene) {
   if (scene.kicker) copy.append(el("p", "scene__kicker", scene.kicker));
   if (scene.title) copy.append(el("h1", "scene__title", scene.title));
   (scene.lines || []).forEach((line) => copy.append(el("p", "scene__line", line)));
+  if (scene.archiveNext) {
+    const archiveButton = el("button", "restart", "See all photos & videos");
+    archiveButton.type = "button";
+    archiveButton.addEventListener("click", (event) => {
+      event.stopPropagation();
+      goToScene(currentIndex + 1);
+    });
+    copy.append(archiveButton);
+  }
   if (scene.last) {
     const restart = el("button", "restart", "Start again");
     restart.type = "button";
@@ -159,6 +168,8 @@ function renderText(scene, element) {
 }
 
 function renderMedia(scene, element) {
+  if (scene.copyPosition === "raised") element.classList.add("scene--copy-raised");
+  if (scene.effect) element.classList.add(`scene--${scene.effect}`);
   const box = el("div", "scene__media");
   const presets = presetFor(scene);
   scene.media.forEach((media, index) => {
@@ -166,7 +177,12 @@ function renderMedia(scene, element) {
     fillCard(card, media);
     box.append(card);
   });
-  element.append(box, createCopy(scene));
+  if (scene.layout === "chapter") {
+    element.classList.add("scene--chapter");
+    element.append(createCopy(scene), box);
+  } else {
+    element.append(box, createCopy(scene));
+  }
 }
 
 function renderVideo(scene, element) {
