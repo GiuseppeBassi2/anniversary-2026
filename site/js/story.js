@@ -172,7 +172,7 @@ export const story = [
   a4.media([photo("D", 58)], { slug: "princess-min", effect: "love-pop" }),
   a4.media([photo("D", 57), video("D", 55)], { slug: "molto-cool", lines: ["Moooolto cool bambina 😎🥰❤️"] }),
   a4.video(video("D", 63), { slug: "vertical-love", effect: "love-pop" }),
-  a4.media([video("D", 52), photo("D", 42)], { slug: "glasses-min", lines: ["So hot Min with glasses 🤓😍🔥❤️"], effect: "love-pop" }),
+  a4.media([video("D", 52), photo("D", 42)], { slug: "glasses-min", layout: "feature-video", lines: ["So hot Min with glasses 🤓😍🔥❤️"], effect: "love-pop" }),
   a4.media([photo("D", 35), photo("D", 53)], { slug: "japan-soft-moment", effect: "soft-sparkle" }),
   a4.media([video("D", 38), video("D", 37), video("D", 48)], {
     slug: "happiest-moments", layout: "three-videos", lines: ["Happiest moments together 🥹💕✨", "I wish we could share moments like these for the rest of our lives ❤️"], effect: "love-pop",
