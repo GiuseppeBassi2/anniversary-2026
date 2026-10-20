@@ -1,5 +1,5 @@
 import { sceneTypes, story } from "./story.js?v=20261019j";
-import { renderArt, renderFlightArt } from "./art.js?v=20261019j";
+import { renderArt, renderFlightArt } from "./art.js?v=20261019k";
 
 const experience = document.querySelector(".experience");
 const stage = document.querySelector("#stage");
