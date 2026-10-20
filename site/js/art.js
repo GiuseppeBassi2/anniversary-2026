@@ -261,7 +261,7 @@ const destinationPhotos = {
     ["https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Haedong_Yonggungsa_Temple_sunset_view.jpg/330px-Haedong_Yonggungsa_Temple_sunset_view.jpg", "Tempio Haedong Yonggungsa sul mare a Busan", "BUSAN", " destination-photo--busan"],
   ],
   japan: [
-    ["https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Cherry_blossoms_with_Seibu_Tamagawa_Line_at_Mamushizaka.jpg/500px-Cherry_blossoms_with_Seibu_Tamagawa_Line_at_Mamushizaka.jpg", "Treno tra i ciliegi in Giappone", "TRAINS", ""],
+    ["https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Shinkansen_N700_Z13.jpg/960px-Shinkansen_N700_Z13.jpg", "Treno Shinkansen in Giappone", "TRAINS", ""],
     ["https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Sakura_and_boats_in_the_Chidorigafuchi_Moat_-_Tokyo%2C_Japan_-_DSC06047.jpg/960px-Sakura_and_boats_in_the_Chidorigafuchi_Moat_-_Tokyo%2C_Japan_-_DSC06047.jpg", "Ciliegi e barche in Giappone", "SAKURA", ""],
     ["https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Sunset_over_Tokyo_%28Unsplash%29.jpg/500px-Sunset_over_Tokyo_%28Unsplash%29.jpg", "Tramonto sul Giappone", "SUNSET", ""],
     ["https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Matcha_Soft_Serve_in_Miyajima_01.jpg/500px-Matcha_Soft_Serve_in_Miyajima_01.jpg", "Gelato al matcha in Giappone", "GELATO", "", ["ノボホショコロトソ", "https://commons.wikimedia.org/wiki/File:Matcha_Soft_Serve_in_Miyajima_01.jpg", "CC BY 4.0", "https://creativecommons.org/licenses/by/4.0/"]],
