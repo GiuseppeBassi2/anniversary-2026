@@ -279,30 +279,24 @@ export const story = [
   // ───────────────── ACT VII · PARIS AND NOW ─────────────────────────
   a7.flight({ slug: "flight-paris", from: "Italy", to: "Paris", layout: "destination-chapter", kicker: "Chapter six", title: "Paris", landmarks: "italy2" }),
 
-  // JUL 24: white shirt, travel day
+  // PARIS: arrival, first walk, food
   a7.media([photo("F", 58), photo("F", 42), video("F", 59)], { slug: "paris-ready", lines: ["Ready for Paris 🗼✈️😍❤️"], effect: "travel-pop" }),
   a7.media([video("F", 60), photo("F", 45)], { slug: "paris-first-walk", layout: "diag-two", lines: ["Why now so bambina! 🥺😂🥰❤️"], effect: "eyes-pop" }),
   a7.media([photo("F", 61), photo("F", 62)], { slug: "paris-grass", layout: "diag-two", lines: ["My queen hates grass... but for sure she loves lying with me 🌿🥰", "I love you so much 🥹❤️💕"], effect: "love-pop" }),
   a7.video(video("F", 63), { slug: "paris-eiffel-sunset", lines: ["🌅🗼😍❤️✨"], effect: "eyes-pop" }),
   a7.media([photo("F", 64)], { slug: "paris-dinner", lines: ["Food food food! 😋🍝🍷🤤"], effect: "food-pop" }),
+  a7.media([video("F", 80), photo("F", 81), photo("F", 78)], { slug: "paris-more-food", layout: "three-videos", lines: ["More food food food! 😋🥐🍰🤤"], effect: "food-pop" }),
 
-  // JUL 25: blue top, Louvre
+  // PARIS: Louvre and after
   a7.media([photo("F", 65)], { slug: "paris-exhibit", lines: ["And now... Min will become again comedian queen... 👑😂🤣", "😂🤣🤭😹"], effect: "laugh-pop" }),
   a7.video(video("F", 67), { slug: "paris-comedian-two", lines: ["😂🤣😂🤣🤭😹"], effect: "laugh-pop" }),
-  a7.media([video("F", 66), video("F", 70)], { slug: "paris-louvre-blue", layout: "diag-two", lines: ["Mia regina 👑😍❤️💕", "😂🤣😂🤣😹🤭"], effect: "laugh-pop" }),
-  a7.video(video("F", 69), { slug: "paris-egypt", lines: ["😂🤣😂🤣😂🤣🤭"], effect: "laugh-pop" }),
-  a7.media([photo("F", 68), photo("F", 71), photo("F", 72)], { slug: "paris-hallway", lines: ["A very long hallway.", "Perfect for a kiss."] }),
-  a7.media([photo("F", 73)], { slug: "paris-river", lines: ["Golden hour by the river."] }),
-  a7.video(video("F", 74), { slug: "paris-slush", lines: ["Slush. Eiffel. Blue top again."] }),
-  a7.video(video("F", 75)),
-
-  // JUL 26: crêpes
-  a7.video(video("F", 79), { slug: "paris-eiffel-kiss" }),
-  a7.video(video("F", 80), { slug: "paris-crepes", lines: ["Crêpes.", "Serious business."] }),
-  a7.media([photo("F", 81), photo("F", 78)], { slug: "paris-lunch", lines: ["Lunch with a view.", "Me eating. Min documenting."] }),
-
-  // JUL 27: grey shirt, last day
-  a7.media([photo("F", 76), photo("F", 77)], { slug: "paris-last-day", lines: ["Last day.", "Dinner. Dessert. Same priorities."] }),
+  a7.media([photo("F", 71), video("F", 70)], { slug: "paris-louvre-blue", layout: "diag-two", lines: ["Mia regina 👑😍❤️💕", "😂🤣😂🤣😹🤭"], effect: "laugh-pop" }),
+  a7.media([video("F", 66), video("F", 69)], { slug: "paris-egypt", layout: "diag-two", lines: ["😂🤣😂🤣😂🤣🤭"], effect: "laugh-pop" }),
+  a7.media([photo("F", 73)], { slug: "paris-river", lines: ["Beautiful Venere in Paris 🥹💙✨"], effect: "eyes-pop" }),
+  a7.video(video("F", 74), { slug: "paris-slush", lines: ["Happy bambina with blue Slush 🥤💙😍"], effect: "eyes-pop" }),
+  a7.video(video("F", 75), { slug: "paris-sparkles", effect: "magic-pop" }),
+  a7.video(video("F", 79), { slug: "paris-eiffel-kiss", effect: "love-pop" }),
+  a7.media([photo("F", 68), photo("F", 72)], { slug: "love-forever", layout: "diag-two", lines: ["I will love you forever ❤️"], effect: "love-pop" }),
 
   // FINALE
   a8.media([photo("F", 47)], { slug: "final-b", tone: "final", lines: ["Happy anniversary, Min."], last: true }),
