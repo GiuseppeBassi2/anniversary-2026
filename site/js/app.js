@@ -1,4 +1,4 @@
-import { sceneTypes, story } from "./story.js?v=20261019e";
+import { sceneTypes, story } from "./story.js?v=20261019f";
 import { renderArt, renderFlightArt } from "./art.js";
 
 const experience = document.querySelector(".experience");
@@ -186,6 +186,7 @@ function renderMedia(scene, element) {
 }
 
 function renderVideo(scene, element) {
+  if (scene.effect) element.classList.add(`scene--${scene.effect}`);
   const box = el("div", "scene__media");
   const media = scene.media[0];
   const card = createCard(media, PRESETS[1][0], 1);
