@@ -205,7 +205,7 @@ export const story = [
     slug: "more-japan-sweets", lines: ["Before another long distance, my bella gave me a beautiful gift 🥹🎁❤️"], effect: "magic-pop",
   }),
 
-  // ───────────────────────── ACT V ─────────────────────────
+  // ───────────────── ACT V ─────────────────────────
   a5.text({ slug: "apart-two", title: "Again long distance 😢", tone: "medium" }),
   a5.media([photo("E", 2), photo("E", 9), photo("E", 13), photo("E", 22), photo("E", 5)], { slug: "paparazzi", layout: "five", lines: ["Tuo paparazzi boyfriend loves you so much 📸😂🥰❤️"], effect: "love-pop" }),
   a5.media([photo("E", 1), photo("E", 3), photo("E", 8), photo("E", 11)], { slug: "distance-again-one", lines: ["More photos of my bella 😍❤️"], effect: "eyes-pop" }),
@@ -286,6 +286,7 @@ export const story = [
   a7.video(video("F", 63), { slug: "paris-eiffel-sunset", lines: ["🌅🗼😍❤️✨"], effect: "eyes-pop" }),
   a7.media([photo("F", 64)], { slug: "paris-dinner", lines: ["Food food food! 😋🍝🍷🤤"], effect: "food-pop" }),
   a7.media([video("F", 80), photo("F", 81), photo("F", 78)], { slug: "paris-more-food", layout: "three-videos", lines: ["More food food food! 😋🥐🍰🤤"], effect: "food-pop" }),
+  a7.media([photo("F", 76), photo("F", 77)], { slug: "paris-dessert", layout: "diag-two", lines: ["Carina bambina with buonissimo dolce 🍰😍🥰❤️"], effect: "dessert-pop" }),
 
   // PARIS: Louvre and after
   a7.media([photo("F", 65)], { slug: "paris-exhibit", lines: ["And now... Min will become again comedian queen... 👑😂🤣", "😂🤣🤭😹"], effect: "laugh-pop" }),
