@@ -222,26 +222,26 @@ export const story = [
   a6.media([photo("F", 1), video("F", 2)], { slug: "july-flowers", layout: "diag-two", lines: ["Mia regina happy for the flowers 🌹😍❤️", "Finalmente together in Italy again ❤️"], effect: "love-pop" }),
 
   // FIRENZE
-  a6.media([video("F", 3), photo("F", 5)], { slug: "florence-white-dress", layout: "side-two", lines: ["Firenze with my bella in white dress 🤍😍", "So carina, mia regina 👑❤️"], effect: "eyes-pop" }),
+  a6.media([video("F", 3), photo("F", 5)], { slug: "florence-white-dress", layout: "diag-two", lines: ["Firenze with my bella in white dress 🤍😍", "So carina, mia regina 👑❤️"], effect: "eyes-pop" }),
   a6.video(video("F", 4), { slug: "duck-shop", lines: ["Why mia bambina so obsessed with papere 🦆😂🤣", "😂🤣🦆🤭"], effect: "duck-chaos" }),
   a6.video(video("F", 6), { slug: "florence-drink", lines: ["Mia bella molto loves granita and is mooolto carina 🥤😋🥰"], effect: "gelato-pop" }),
-  a6.media([video("F", 7), video("F", 8)], { slug: "uffizi", layout: "side-two", lines: ["Mio amore doing stupid thing way in Uffizi 🖼️😂🤣❤️"], effect: "art-pop" }),
+  a6.media([video("F", 7), video("F", 8)], { slug: "uffizi", layout: "diag-two", lines: ["Mio amore doing stupid thing way in Uffizi 🖼️😂🤣❤️"], effect: "art-pop" }),
 
   a6.media([video("F", 11), video("F", 12)], { slug: "pienza-night", layout: "diag-two", lines: ["I missed soooo much my bambina drunk... moooolto carina 🥴🥰❤️", "And why are you running?! 😂🤣🏃‍♀️💕"], effect: "drunk-pop" }),
 
   // VAL D'ORCIA + PIENZA
-  a6.media([photo("F", 13)], { slug: "pienza", lines: ["If you marry me, I will give you affogato every day ☕🍦💍🥹", "Pienza, and a molto big iced coffee 😍❤️"], effect: "gelato-pop" }),
-  a6.video(video("F", 14), { slug: "val-dorcia", lines: ["Mia regina molto bella with animals 🐑🐐🥹💚", "Val d’Orcia: green dress, green hills 🌿💚🍀"], effect: "totoro-pop" }),
+  a6.media([photo("F", 13)], { slug: "pienza", lines: ["If you marry me, I will give you affogato every day ☕🍦💍🥹"], effect: "gelato-pop" }),
+  a6.video(video("F", 14), { slug: "val-dorcia", lines: ["Mia regina molto bella with animals 🐑🐐🥹💚"], effect: "totoro-pop" }),
 
   // UMBRIA
   a6.media([photo("F", 15), video("F", 37)], { slug: "road-umbria", layout: "diag-two", lines: ["On the road to Umbria with pillow 🚗🛏️☀️😂"], effect: "sleepy-pop" }),
-  a6.media([photo("F", 17), video("F", 16)], { slug: "umbria-chill", layout: "side-two", lines: ["My regina finally can chill... promise our life will be like this 🥹🛏️❤️", "Umbria 😍✨"], effect: "love-pop" }),
+  a6.media([photo("F", 17), video("F", 16)], { slug: "umbria-chill", layout: "diag-two", lines: ["My regina finally can chill... promise our life will be like this 🥹🛏️❤️"], effect: "love-pop" }),
   a6.video(video("F", 18), { slug: "umbria-before-dinner", lines: ["Min before graaaaande dinner... 😋🍝🤤", "so happy, so cute 🥰❤️"], effect: "food-pop" }),
   a6.media([video("F", 19), video("F", 20)], { slug: "umbria-dinner", layout: "diag-two", lines: ["My bambina immediately drunk with wine as always 🍷🥴😂🤣", "🍝🤌😂"], effect: "wine-pop" }),
 
   // NAPOLI
   a6.video(video("F", 23), { slug: "rose-in-car", lines: ["I know! Sei vorrei io mangio tu 🥺😍❤️"], effect: "eyes-pop" }),
-  a6.video(video("F", 22), { slug: "car-singing", lines: ["Giuseppe è bambino. Io canto bene e anche io canti bene. Io non bambina 🥺😍❤️", "😂🎤🚗"], effect: "eyes-pop" }),
+  a6.video(video("F", 22), { slug: "car-singing", lines: ["Giuseppe è bambino. Io canto bene e anche io balli bene. Io non bambina 🥺😍❤️", "😂💃🚗"], effect: "eyes-pop" }),
   a6.video(video("F", 21), { slug: "car-carne", lines: ["I love you eating carne... molto perfect you eating carne... will you marry me? 🥩😍💍", "😂🤣❤️"], effect: "laugh-pop" }),
   a6.media([video("F", 28), video("F", 29)], { slug: "naples-street-food", layout: "diag-two", lines: ["Uffa Min was molto uffa before 😤", "but thankfully I gave her Napoli food and she forgave me 🍕🥰❤️"], effect: "naples-pop" }),
   a6.media([photo("F", 25)], { slug: "capri-queen", lines: ["My beautiful queen ready for Capri 👑🏝️😍", "⛵✨❤️"], effect: "eyes-pop" }),
@@ -268,9 +268,9 @@ export const story = [
 
   // LAGO DI GARDA: Riva, Tenno, Limone
   a6.media([photo("F", 46), video("F", 30)], { slug: "road-lake", lines: ["Next stop: Lago di Garda 🚗💙", "Navigator Min: asleep 😴😂"], effect: "sleepy-pop" }),
-  a6.video(video("F", 50), { slug: "riva-del-garda", lines: ["Riva del Garda 💙🏞️", "My bella in blue 🥹❤️"], effect: "lake-pop" }),
-  a6.media([photo("F", 47), video("F", 49)], { slug: "riva-kisses", layout: "side-two", lines: ["Blue couple 💙😘", "Sooo many kisses by the lake ❤️"], effect: "kiss-pop" }),
-  a6.media([photo("F", 48)], { slug: "riva-playground", lines: ["Min on the bunny 🐰😂🥰"], effect: "laugh-pop" }),
+  a6.video(video("F", 50), { slug: "riva-del-garda", lines: ["My bella in Riva del Garda with papere 🦆💙🏞️", "🥹❤️"], effect: "lake-pop" }),
+  a6.media([photo("F", 48)], { slug: "riva-playground", lines: ["Ei tu! Molto bambina 😂🤣🐰🥰"], effect: "laugh-pop" }),
+  a6.media([photo("F", 47), video("F", 49)], { slug: "riva-kisses", layout: "diag-two", lines: ["Blue couple 💙😘", "Turn the volume up 🔊 I love this video so much for what she says 🥹❤️"], effect: "volume-pop" }),
   a6.media([photo("F", 52), video("F", 53)], { slug: "lago-di-tenno", lines: ["Lago di Tenno 💙🏔️", "Cutest bambina by the lake 🥹❤️"], effect: "lake-pop" }),
   a6.media([photo("F", 54), video("F", 51)], { slug: "tenno-gelato", layout: "side-two", lines: ["Snack time 😋", "and gelato in blue 🍦💙❤️"], effect: "gelato-pop" }),
   a6.media([photo("F", 39), photo("F", 55)], { slug: "baking-cookies", lines: ["Min baking 🍪👩‍🍳", "Me supervising... eating 😂❤️"], effect: "food-pop" }),
