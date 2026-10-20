@@ -87,13 +87,13 @@ export const story = [
   a1.media([video("A", 62), photo("A", 65)], { lines: ["Look amore, I’m better than you at cooking 👨‍🍳😏❤️"] }),
   a1.media([photo("A", 29), photo("A", 67)], { slug: "travel-furba", lines: ["Time to travel with my furba bambina 🧳✈️❤️"] }),
 
-  a1.flight({ slug: "flight-italy", from: "Toronto", to: "Italy", lines: ["Now it was my turn."] }),
-
   // ITALY I (B)
-  a1.text({ slug: "italy-one", kicker: "Chapter two", title: "My world.", lines: ["Min, meet Italy."] }),
-  a1.media([photo("B", 1)], { lines: ["Min officially enters my world.", "Passes with honors."] }),
-  a1.media([photo("B", 2), photo("B", 3)], { lines: ["Churches, arches, kisses."] }),
-  a1.video(video("B", 5)),
+  a1.flight({ slug: "italy-one", from: "Toronto", to: "Italy", layout: "italy-chapter", kicker: "Chapter two", title: "Italy", landmarks: true }),
+  a1.media([photo("B", 1)], { slug: "bella-with-family", lines: ["Finally my bella with my family (mooooolto bella) 🥹❤️"] }),
+  a1.media([photo("B", 2)], { slug: "mia-regina-church", lines: ["Mia Regina 😍"] }),
+  a1.media([photo("B", 3)], { slug: "min-in-verona", lines: ["Min in Verona ❤️"] }),
+  a1.media([photo("B", 21)], { slug: "mia-regina-bergamo", lines: ["Mia Regina in Bergamo 🥰"] }),
+  a1.video(video("B", 5), { slug: "stupid-bambini-milano", lines: ["Stupid bambini in Milano 😂❤️"] }),
   a1.media([photo("B", 8), video("B", 10), video("B", 9)], {}),
   a1.media([photo("B", 11)], { lines: ["Trevi at night.", "Wish is classified."] }),
   a1.video(video("B", 12)),
@@ -101,7 +101,6 @@ export const story = [
   a1.video(video("B", 6)),
   a1.media([photo("B", 19), photo("B", 20)], { lines: ["Mirror selfies and kisses.", "In Rome. Obviously."] }),
   a1.video(video("B", 17)),
-  a1.media([photo("B", 21)], { lines: ["Golden hour Min."] }),
 
   // APART (C)
   a1.text({ slug: "apart-one", kicker: "Then", title: "And then came the stupid part.", tone: "medium" }),
