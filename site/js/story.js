@@ -80,18 +80,18 @@ export const story = [
   a1.video(video("A", 40), { lines: ["My master... 👑", "I’m completely your slave 🥵❤️😂"] }),
   a1.media([photo("A", 46), photo("A", 53), photo("A", 54)], { slug: "flower-queen", lines: ["But also my queen 👑💐"] }),
   a1.video(video("A", 47), { lines: ["Cutest girl on the planet 🌎", "my beautiful flower 🌸💖"] }),
-  a1.media([photo("A", 35), photo("A", 49), photo("A", 19)], { slug: "cool-bambina", lines: ["Also moooolto cool bambina 😎✨"] }),
-  a1.media([photo("A", 8), video("A", 22), photo("A", 20), photo("A", 45)], {
+  a1.media([photo("A", 35), photo("A", 19)], { slug: "cool-bambina", lines: ["Also moooolto cool bambina 😎✨"], effect: "love-pop" }),
+  a1.media([photo("A", 8), video("A", 22), photo("A", 49), photo("A", 45)], {
     slug: "beautiful-angel", lines: ["And the most beautiful angel I’ve ever seen in my life 🥹✨", "My motivation ❤️"],
   }),
 
   a1.media([photo("A", 27)], { slug: "hard-days", lines: ["It was such a difficult time for me...", "and you became my motivation ❤️"] }),
+  a1.media([photo("A", 48), photo("A", 25)], { slug: "safe-heaven", lines: ["My safe heaven 🥹🐧🤍", "Can we marry and live like this forever? 💍🥹❤️"], effect: "love-pop" }),
   a1.media([photo("A", 37), photo("A", 38)], { lines: ["Beautiful pictures by Giovanni 📸🍁", "💕❤️💕"] }),
   a1.video(video("A", 39)),
-  a1.media([photo("A", 30), photo("A", 31), photo("A", 32), photo("A", 33), photo("A", 34)], {
-    slug: "chicago", layout: "five", lines: ["Chicago with my bella 🏙️🥰❤️"], effect: "love-pop",
-  }),
-  a1.media([photo("A", 48), photo("A", 25)], { slug: "safe-heaven", lines: ["My safe heaven 🥹🐧🤍", "Can we marry and live like this forever? 💍🥹❤️"] }),
+  a1.media([photo("A", 30), photo("A", 31)], { slug: "chicago-one", lines: ["Chicago with my bella 🏙️🥰❤️"], effect: "love-pop" }),
+  a1.media([photo("A", 32), photo("A", 34)], { slug: "chicago-two", lines: ["Exploring Chicago together 🥹🏙️❤️"] }),
+  a1.media([photo("A", 33)], { slug: "chicago-squirrel", lines: ["So funny my squirrel 🐿️😂🥰❤️"], effect: "squirrel-pop" }),
   a1.media([photo("A", 28), photo("A", 57), photo("A", 63), photo("A", 64)], {
     slug: "dormissimo-photos", lines: ["Dormissimo bambino 😴💤🥰"],
   }),
@@ -123,19 +123,20 @@ export const story = [
   a3.text({ slug: "apart-one", title: "And now the stupid part 😢", tone: "medium" }),
   a3.media([photo("C", 3)], { slug: "rainbow-glasses", lines: ["Molto cool girlfriend 🌈😎💕"] }),
   a3.media([photo("C", 4)], { slug: "furba-face", lines: ["Ei tu, moooolto furba face 😏🤭❤️"] }),
-  a3.media([photo("C", 5), photo("C", 10), photo("C", 12), photo("C", 13)], { slug: "distance-min-one", lines: ["Your photos made the distance a little smaller 🥹❤️"] }),
   a3.media([photo("C", 7)], { slug: "mathematician", lines: ["Eeee? Can you be my mathematician girlfriend?? 🧮🤓🥹❤️"] }),
   a3.media([photo("C", 11)], { slug: "mathematician-glasses", lines: ["For sure mathematician glasses Min! 🤓😂🤣💕❤️"] }),
-  a3.media([photo("C", 14), photo("C", 15), photo("C", 16), photo("C", 17)], { slug: "distance-min-two", lines: ["Eeee? My bellissima again 😍💕"] }),
+  a3.media([photo("C", 5), photo("C", 12)], { slug: "distance-min-one", lines: ["How is it possible so stupid papera? 🦆😂🤣💕"], effect: "duck-chaos" }),
+  a3.media([photo("C", 14), photo("C", 15), photo("C", 16), photo("C", 17), photo("C", 10), photo("C", 13)], { slug: "distance-min-two", layout: "six", lines: ["Eeee? My bellissima again 😍💕"] }),
   a3.media([photo("C", 6)], { slug: "papera-girlfriend", lines: ["My papera girlfriend... I love! 🦆🥹💕"] }),
-  a3.media([photo("C", 18), photo("C", 19), photo("C", 21), photo("C", 22)], { slug: "distance-min-three", lines: ["So many little moments of you 🥰❤️"] }),
   a3.media([photo("C", 8)], { slug: "again-papere", lines: ["Again papere!! 🦆🦆😂❤️"] }),
   a3.media([photo("C", 9)], { slug: "papera-water", lines: ["Eeee?? Why you are papera in water! 🦆🌊😂🤣"] }),
+  a3.media([photo("C", 18), photo("C", 19), photo("C", 21), photo("C", 22)], { slug: "distance-min-three", effect: "duck-love" }),
   a3.media([photo("C", 23), photo("C", 25), photo("C", 26), photo("C", 27)], { slug: "distance-min-four", lines: ["I never got tired of seeing your face 🥹💕"] }),
   a3.media([photo("C", 1)], { slug: "kiss-from-afar", lines: ["Amore, this is where I would kiss you if we weren't long distance 🥹💋❤️"] }),
-  a3.media([photo("C", 28), photo("C", 29), photo("C", 30)], { slug: "distance-min-five", lines: ["Little glimpses of my furba bambina 😏💕"] }),
   a3.video(video("C", 24), { slug: "carino-kiss", lines: ["My motivation... I love your carino kiss... please more 🥹💋😘💕❤️"] }),
-  a3.media([photo("C", 31), photo("C", 32), photo("C", 33)], { slug: "distance-min-six", lines: ["My favourite person, even from far away ❤️"] }),
+  a3.media([photo("C", 31), photo("C", 32), photo("C", 33)], { slug: "distance-min-six", lines: ["My Beautiful Princess 🥹👸💕❤️"], effect: "love-pop" }),
+  a3.media([photo("C", 28)], { slug: "mirror-regina", lines: ["And now bellissima regina... 👑🥹💕✨"], effect: "love-pop" }),
+  a3.media([photo("C", 29), photo("C", 30)], { slug: "korean-bambina", lines: ["그리고 이제, 나의 예쁜 아기 🥹😍💕❤️"], effect: "love-pop" }),
 
   // ACT IV: KOREA
   a4.flight({ slug: "flight-korea", from: "Italy", to: "Korea", layout: "destination-chapter", kicker: "Chapter three", title: "Korea", landmarks: "korea" }),
@@ -162,7 +163,7 @@ export const story = [
   a4.video(video("D", 45), { slug: "perfect-kisses", lines: ["In this video you gave me perfect kisses 🥹😘💋❤️"] }),
   a4.media([photo("D", 40)], { slug: "kisses-back", lines: ["For sure amore, I’m giving you kisses too 😘❤️"] }),
   a4.media([photo("D", 14), photo("D", 23), photo("D", 31), photo("D", 24)], { slug: "papera-comedian-japan", lines: ["Again my papera comedian 🦆😂🤣🥰❤️"], effect: "duck-chaos" }),
-  a4.media([photo("D", 34), video("D", 33)], { slug: "min-toroto", lines: ["Min Toroto 😂🥰💚"] }),
+  a4.media([photo("D", 34), video("D", 33)], { slug: "min-toroto", lines: ["Min Toroto 😂🥰💚✨"], effect: "totoro-pop" }),
   a4.media([video("D", 29), video("D", 15)], { slug: "souvenir-laughs", lines: ["😂🤣🦆🥰❤️"], effect: "duck-chaos" }),
   a4.video(video("D", 41), { slug: "more-laughs", effect: "duck-chaos" }),
   a4.video(video("D", 50), { slug: "osaka-200-days", lines: ["200 days in Osaka 🥹🎉🇯🇵❤️"] }),
@@ -171,16 +172,19 @@ export const story = [
   a4.media([photo("D", 58)], { slug: "princess-min", effect: "love-pop" }),
   a4.media([photo("D", 57), video("D", 55)], { slug: "molto-cool", lines: ["Moooolto cool bambina 😎🥰❤️"] }),
   a4.video(video("D", 63), { slug: "vertical-love", effect: "love-pop" }),
-  a4.media([video("D", 56), photo("D", 42)], { slug: "glasses-min", lines: ["So hot Min with glasses 🤓😍🔥❤️"], effect: "love-pop" }),
-
-  // Remaining Korea and Japan memories, each large enough to see and play.
-  a4.media([photo("D", 35)], { slug: "more-japan-glasses", lines: ["More cool bambina 😎❤️"] }),
-  a4.video(video("D", 38), { slug: "more-japan-clip-1" }),
-  a4.media([photo("D", 62)], { slug: "more-japan-sweets", lines: ["Something sweet 🍫💕"] }),
-  a4.video(video("D", 37), { slug: "more-japan-clip-2" }),
-  a4.video(video("D", 48), { slug: "more-japan-clip-3" }),
-  a4.video(video("D", 52), { slug: "more-japan-clip-4" }),
-  a4.media([photo("D", 53)], { slug: "train-selfie", lines: ["Train selfie 🚄🥰"] }),
+  a4.media([video("D", 52), photo("D", 42)], { slug: "glasses-min", lines: ["So hot Min with glasses 🤓😍🔥❤️"], effect: "love-pop" }),
+  a4.media([photo("D", 35), photo("D", 53)], { slug: "japan-soft-moment", effect: "soft-sparkle" }),
+  a4.media([video("D", 38), video("D", 37), video("D", 48)], {
+    slug: "happiest-moments", layout: "three-videos", lines: ["Happiest moments together 🥹💕✨", "I wish we could share moments like these for the rest of our lives ❤️"], effect: "love-pop",
+  }),
+  a4.video(video("D", 56), {
+    slug: "seoul-first-date-again",
+    lines: ["We recreated our first date in Seoul with Korean chicken 🍗🥹❤️", "I don’t think we’ve ever been happier. It felt like magic ✨💕"],
+    effect: "magic-pop",
+  }),
+  a4.media([photo("D", 62)], {
+    slug: "more-japan-sweets", lines: ["Before another long distance, my bella gave me a beautiful gift 🥹🎁❤️"], effect: "magic-pop",
+  }),
 
   // ───────────────────────── ACT V ─────────────────────────
   a5.text({ slug: "apart-two", title: "Again long distance 😢", tone: "medium" }),
