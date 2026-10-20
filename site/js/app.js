@@ -1,7 +1,8 @@
-// story.js is always fetched fresh (no stale cache between edits)
-const { sceneTypes, story } = await import(`./story.js?t=${Date.now()}`);
-import { renderArt, renderFlightArt } from "./art.js?v=20261020h";
-import { renderItalyAgainArt } from "./italy2.js?v=20261020h";
+// content modules are always fetched fresh (no stale cache between edits)
+const stamp = Date.now();
+const { sceneTypes, story } = await import(`./story.js?t=${stamp}`);
+const { renderArt, renderFlightArt } = await import(`./art.js?t=${stamp}`);
+const { renderItalyAgainArt } = await import(`./italy2.js?t=${stamp}`);
 
 const experience = document.querySelector(".experience");
 const stage = document.querySelector("#stage");
