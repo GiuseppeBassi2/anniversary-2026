@@ -1,4 +1,4 @@
-// CSS/SVG scenes for future chapters and flight routes; destination cards use CC0 photographs.
+// CSS/SVG scenes for future chapters and flight routes; destination cards use real photographs.
 
 function seeded(seed) {
   let s = seed;
@@ -249,8 +249,8 @@ function familyLineup() {
 // Haedong_Yonggungsa_Temple_sunset_view.jpg.
 const destinationPhotos = {
   italy: [
-    ["https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Arena_di_Verona_fuori_2022_%281%29.jpg/330px-Arena_di_Verona_fuori_2022_%281%29.jpg", "Arena di Verona", "VERONA", ""],
-    ["https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/0Bergamo_citt%C3%A0_alta-colli_di_Bergamo.jpg/330px-0Bergamo_citt%C3%A0_alta-colli_di_Bergamo.jpg", "Bergamo Alta", "BERGAMO", " destination-photo--bergamo"],
+    ["https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Verona_cityscape_sunny.jpg/500px-Verona_cityscape_sunny.jpg", "Verona e il fiume Adige", "VERONA", ""],
+    ["https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Sunrise_at_Bergamo_old_town%2C_Lombardy%2C_Italy.jpg/500px-Sunrise_at_Bergamo_old_town%2C_Lombardy%2C_Italy.jpg", "Bergamo Alta all’alba", "BERGAMO", "", ["hozinja", "https://commons.wikimedia.org/wiki/File:Sunrise_at_Bergamo_old_town,_Lombardy,_Italy.jpg", "CC BY 2.0", "https://creativecommons.org/licenses/by/2.0/"]],
     ["https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Milan-duomo-front-facade.jpg/330px-Milan-duomo-front-facade.jpg", "Duomo di Milano", "MILANO", ""],
     ["https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Fontana_di_Trevi_front_view.jpg/330px-Fontana_di_Trevi_front_view.jpg", "Fontana di Trevi a Roma", "ROMA", ""],
   ],
@@ -260,13 +260,19 @@ const destinationPhotos = {
     ["https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/Cherry_blossoms_in_Seoul_Forest%2C_South_Korea2.jpg/330px-Cherry_blossoms_in_Seoul_Forest%2C_South_Korea2.jpg", "Ciliegi in fiore in Corea", "BLOSSOMS", ""],
     ["https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Haedong_Yonggungsa_Temple_sunset_view.jpg/330px-Haedong_Yonggungsa_Temple_sunset_view.jpg", "Tempio Haedong Yonggungsa sul mare a Busan", "BUSAN", " destination-photo--busan"],
   ],
+  japan: [
+    ["https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Cherry_blossoms_with_Seibu_Tamagawa_Line_at_Mamushizaka.jpg/500px-Cherry_blossoms_with_Seibu_Tamagawa_Line_at_Mamushizaka.jpg", "Treno tra i ciliegi in Giappone", "TRAINS", ""],
+    ["https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Sakura_and_boats_in_the_Chidorigafuchi_Moat_-_Tokyo%2C_Japan_-_DSC06047.jpg/960px-Sakura_and_boats_in_the_Chidorigafuchi_Moat_-_Tokyo%2C_Japan_-_DSC06047.jpg", "Ciliegi e barche in Giappone", "SAKURA", ""],
+    ["https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Sunset_over_Tokyo_%28Unsplash%29.jpg/500px-Sunset_over_Tokyo_%28Unsplash%29.jpg", "Tramonto sul Giappone", "SUNSET", ""],
+    ["https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Matcha_Soft_Serve_in_Miyajima_01.jpg/500px-Matcha_Soft_Serve_in_Miyajima_01.jpg", "Gelato al matcha in Giappone", "GELATO", "", ["ノボホショコロトソ", "https://commons.wikimedia.org/wiki/File:Matcha_Soft_Serve_in_Miyajima_01.jpg", "CC BY 4.0", "https://creativecommons.org/licenses/by/4.0/"]],
+  ],
 };
 
 function renderDestinationFlightArt(from, to, kind) {
-  const photos = destinationPhotos[kind].map(([src, alt, label, extraClass]) => `
+  const photos = destinationPhotos[kind].map(([src, alt, label, extraClass, credit]) => `
       <figure class="destination-photo${extraClass}">
         <img src="${src}" alt="${alt}" loading="eager">
-        <figcaption>${label}</figcaption>
+        <figcaption>${label}${credit ? `<span class="destination-credit"><a href="${credit[1]}" target="_blank" rel="noopener noreferrer">© ${credit[0]}</a> · <a href="${credit[3]}" target="_blank" rel="noopener noreferrer">${credit[2]}</a> · cropped</span>` : ""}</figcaption>
       </figure>`).join("");
   return `<div class="art art--flight art--destination art--${kind}">
     <div class="destination-route">
@@ -287,7 +293,7 @@ function renderDestinationFlightArt(from, to, kind) {
 }
 
 export function renderFlightArt(from, to, landmarks = false) {
-  if (landmarks) return renderDestinationFlightArt(from, to, landmarks === "korea" ? "korea" : "italy");
+  if (landmarks) return renderDestinationFlightArt(from, to, landmarks === "korea" ? "korea" : landmarks === "japan" ? "japan" : "italy");
   const path = "M30 150 Q 180 10 330 150";
   return `<div class="art art--flight">
     <svg class="art-svg" viewBox="0 0 360 200" aria-hidden="true">
