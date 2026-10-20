@@ -234,7 +234,7 @@ export const story = [
   a6.video(video("F", 14), { slug: "val-dorcia", lines: ["Mia regina molto bella with animals 🐑🐐🥹💚"], effect: "totoro-pop" }),
 
   // UMBRIA
-  a6.media([photo("F", 15), video("F", 37)], { slug: "road-umbria", layout: "diag-two", lines: ["On the road to Umbria with pillow 🚗🛏️☀️😂"], effect: "sleepy-pop" }),
+  a6.media([photo("F", 15)], { slug: "road-umbria", lines: ["On the road to Umbria with pillow 🚗🛏️😂"], effect: "sleepy-pop" }),
   a6.media([photo("F", 17), video("F", 16)], { slug: "umbria-chill", layout: "diag-two", lines: ["My regina finally can chill... promise our life will be like this 🥹🛏️❤️"], effect: "love-pop" }),
   a6.video(video("F", 18), { slug: "umbria-before-dinner", lines: ["Min before graaaaande dinner... 😋🍝🤤", "so happy, so cute 🥰❤️"], effect: "food-pop" }),
   a6.media([video("F", 19), video("F", 20)], { slug: "umbria-dinner", layout: "diag-two", lines: ["My bambina immediately drunk with wine as always 🍷🥴😂🤣", "🍝🤌😂"], effect: "wine-pop" }),
@@ -256,6 +256,7 @@ export const story = [
   a6.media([photo("F", 32), video("F", 33)], { slug: "pool-night", layout: "diag-two", lines: ["Moooolto furba faces 😏😂", "We are so stupid together 🤪❤️"], effect: "furba-pop" }),
   a6.media([video("F", 35), video("F", 36)], { slug: "car-faces", layout: "diag-two", lines: ["Per favore amore, I want to travel with you like this forever 🥺🚗🌾❤️", "🌾😍🌾"], effect: "hay-pop" }),
   a6.media([photo("F", 9), video("F", 10), video("F", 30)], { slug: "car-snack-sleep", lines: ["Please amore don’t stop singing 🥺🎤😍❤️", "🥰💕🎶"], effect: "eyes-pop" }),
+  a6.video(video("F", 37), { slug: "tuscany-sunset", lines: ["Bello sunset with Toscana 🌅☀️😍", "❤️🥰✨"], effect: "eyes-pop" }),
 
   // PISA
   a6.media([photo("F", 38)], { slug: "pisa", lines: ["E! Also Pisa! How is possible so many things! 🗼😍🤯", "❤️💕💖💗💘💝🥰"], effect: "love-pop" }),
@@ -279,10 +280,9 @@ export const story = [
   a7.flight({ slug: "flight-paris", from: "Italy", to: "Paris", layout: "destination-chapter", kicker: "Chapter six", title: "Paris", landmarks: "italy2" }),
 
   // JUL 24: white shirt, travel day
-  a7.video(video("F", 59), { slug: "paris-airport", lines: ["Airport.", "Tired. Excited."] }),
-  a7.media([photo("F", 45)], { slug: "paris-metro", lines: ["Min, on the way. Heart included."] }),
-  a7.video(video("F", 60), { slug: "paris-first-walk", lines: ["First walk."] }),
-  a7.media([photo("F", 61)], { slug: "paris-grass", lines: ["Lying on the grass.", "Nowhere to be."] }),
+  a7.media([photo("F", 58), photo("F", 42), video("F", 59)], { slug: "paris-ready", lines: ["Ready for Paris 🗼✈️😍❤️"], effect: "travel-pop" }),
+  a7.media([video("F", 60), photo("F", 45)], { slug: "paris-first-walk", layout: "diag-two", lines: ["Min, on the way. Heart included.", "First walk."] }),
+  a7.media([photo("F", 61), photo("F", 62)], { slug: "paris-grass", layout: "diag-two", lines: ["Lying on the grass.", "Nowhere to be."] }),
   a7.video(video("F", 63), { slug: "paris-eiffel-sunset" }),
   a7.media([photo("F", 64)], { slug: "paris-dinner", lines: ["First dinner.", "She is very happy."] }),
 
@@ -303,52 +303,8 @@ export const story = [
 
   // JUL 27: grey shirt, last day
   a7.media([photo("F", 76), photo("F", 77)], { slug: "paris-last-day", lines: ["Last day.", "Dinner. Dessert. Same priorities."] }),
-  a7.media([photo("F", 82)], { slug: "paris-tired", lines: ["Tired. Happy.", "Still leaning on each other."] }),
-  a7.media([photo("F", 58), photo("F", 62)], { slug: "italy-leaning", lines: ["Me, leaning on my favorite person 🥹❤️"], effect: "love-pop" }),
 
-  // MANY MINNIES
-  a7.text({ slug: "minnies-intro", kicker: "Field guide", title: "The many Minnies.", lines: ["Quick. Don’t blink."] }),
-  a7.rapid(
-    [
-      { media: photo("E", 7), label: "Cute Minnie" },
-      { media: photo("E", 21), label: "Sleepy Minnie" },
-      { media: photo("F", 54), label: "Hungry Minnie" },
-      { media: photo("F", 1), label: "Princess Minnie" },
-      { media: photo("E", 20), label: "Serious Minnie" },
-      { media: photo("E", 2), label: "Weird Minnie" },
-      { media: photo("C", 9), label: "Papera Minnie" },
-      { media: photo("E", 22), label: "Shhh Minnie" },
-      { media: photo("C", 2), label: "Not that Minnie." },
-    ],
-    { slug: "many-minnies", lines: [] },
-  ),
-
-  // NOW (G)
-  a7.text({ slug: "now", kicker: "Now", title: "And now.", lines: ["Distance again."] }),
-  a7.media([photo("G", 3), photo("G", 5)], { lines: ["But look at her.", "Cap on, apron on, thumbs up."] }),
-  a7.media([photo("G", 2), photo("G", 1), photo("G", 4)], { lines: ["Still Min.", "Still the best part of my day."] }),
-  a7.text({ slug: "what-next", title: "So what happens next?", tone: "big" }),
-
-  // ───────────────── ACT VIII ─────────────────────────
-  a8.art("princeton-fall", { lines: ["Princeton, New Jersey.", "Yes, really."], kicker: "Next chapter", tone: "warm" }),
-  a8.art("princeton-snow", { lines: ["Snow. A train to New York.", "Coffee in paper cups."], tone: "cold" }),
-  a8.art("home", { lines: ["Our future home.", "Small. Warm. Porch light on."] }),
-  a8.art("kitchen", { lines: ["Min’s office.", "Staff: one pastry chef, one taste tester."] }),
-  a8.art("bedroom", { geese: 0, lines: ["The bedroom.", "Calm. Tasteful. One lamp."] }),
-  a8.art("bedroom", { geese: 1, count: "1", lines: ["One goose pillow.", "Cute, honestly."] }),
-  a8.art("bedroom", { geese: 2, count: "2", lines: ["Two.", "Still normal."] }),
-  a8.art("bedroom", { geese: 5, count: "5", lines: ["Five.", "Someone has been shopping."] }),
-  a8.art("bedroom", { geese: 12, count: "12", lines: ["Twelve.", "We need to talk."] }),
-  a8.art("bedroom", { geese: 90, count: "GOOSE APOCALYPSE", apocalypse: true, tone: "alarm", lines: ["Min: “I don’t see the problem.”"] }),
-  a8.art("family-cover", { lines: ["Content warning: extremely cute."], tone: "warm" }),
-  a8.art("family-lineup", { lines: ["Release date: unknown.", "Goose pillows: included."], tone: "warm" }),
-
-  a8.text({ slug: "quiet-one", tone: "quiet", lines: ["Maybe I don’t know exactly what our house will look like."] }),
-  a8.text({ slug: "quiet-two", tone: "quiet", lines: ["Or how many goose pillows there will be."] }),
-  a8.text({ slug: "quiet-three", tone: "quiet", lines: ["But there’s one thing I do know."] }),
-
-  a8.media([photo("F", 47)], { slug: "final-a", tone: "final", lines: ["I want you in it."] }),
-  a8.media([photo("F", 47)], { slug: "final-b", tone: "final", lines: ["Happy anniversary, Min."] }),
-  a8.text({ slug: "final-date", tone: "night", title: "26.09.2026", lines: ["— Giuseppe"], last: true }),
+  // FINALE
+  a8.media([photo("F", 47)], { slug: "final-b", tone: "final", lines: ["Happy anniversary, Min."], last: true }),
 
 ];
