@@ -246,15 +246,15 @@ const commons = (filename) => `https://commons.wikimedia.org/wiki/Special:FilePa
 const destinationPhotos = {
   italy: [
     [commons("Verona cityscape sunny.jpg"), "Verona e il fiume Adige", "VERONA", ""],
-    [commons("Bergamo, Piazza Vecchia.jpg"), "Piazza Vecchia a Bergamo", "BERGAMO", ""],
+    ["https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Sunrise_at_Bergamo_old_town%2C_Lombardy%2C_Italy.jpg/500px-Sunrise_at_Bergamo_old_town%2C_Lombardy%2C_Italy.jpg", "Bergamo Alta all’alba", "BERGAMO", ""],
     [commons("Milan-duomo-front-facade.jpg"), "Duomo di Milano", "MILANO", ""],
     [commons("Fontana di Trevi front view.jpg"), "Fontana di Trevi a Roma", "ROMA", ""],
   ],
   korea: [
     [commons("Haedong Yonggungsa Temple sunset view.jpg"), "Tempio Haedong Yonggungsa sul mare a Busan", "BUSAN · HAEDONG", " destination-photo--busan"],
-    [commons("Gyeongbokgung(palace) Geunjeongjeon(hall).jpg"), "Palazzo Gyeongbokgung a Seoul", "GYEONGBOKGUNG", ""],
-    [commons("Bukchon Hanok Village 06.jpg"), "Case hanok tradizionali a Bukchon", "BUKCHON", ""],
-    [commons("Namsan Tower, Seoul - Namsan2299.jpg"), "N Seoul Tower illuminata di notte", "N SEOUL TOWER", ""],
+    [commons("Gyeongbokgung_Palace_at_Night.jpg"), "Palazzo Gyeongbokgung illuminato a Seoul", "GYEONGBOKGUNG", ""],
+    [commons("Bukchon-ro_11-gil_street_with_hanok_houses_at_blue_hour_in_Bukchon_Hanok_Village_Seoul.jpg"), "Vicolo tradizionale di Bukchon a Seoul", "BUKCHON", ""],
+    [commons("Namsan_Tower_sunset,_Seoul.jpg"), "N Seoul Tower al tramonto", "N SEOUL TOWER", ""],
   ],
   japan: [
     [commons("日本庭園から望む大阪城.jpg"), "Castello di Osaka visto dal giardino", "OSAKA CASTLE", ""],
