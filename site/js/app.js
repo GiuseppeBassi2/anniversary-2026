@@ -1,5 +1,5 @@
-import { sceneTypes, story } from "./story.js?v=20261020b";
-import { renderArt, renderFlightArt } from "./art.js?v=20261020b";
+import { sceneTypes, story } from "./story.js?v=20261020c";
+import { renderArt, renderFlightArt } from "./art.js?v=20261020c";
 
 const experience = document.querySelector(".experience");
 const stage = document.querySelector("#stage");
@@ -72,6 +72,10 @@ function presetFor(scene) {
     { l: 2, t: 0, w: 46, h: 48, rot: -1.5 },
     { r: 2, t: 0, w: 46, h: 48, rot: 1 },
     { l: 27, b: 0, w: 46, h: 48, rot: -1 },
+  ];
+  if (scene.layout === "feature-video") return [
+    { l: 0, t: 0, w: 100, h: 50, rot: -1 },
+    { l: 21, b: 0, w: 58, h: 50, rot: 1 },
   ];
   if (scene.layout === "stacked-wide") return [
     { l: 3, t: 1, w: 94, h: 47, rot: -1 },
