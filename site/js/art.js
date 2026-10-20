@@ -241,56 +241,40 @@ function familyLineup() {
 }
 
 
+// Real CC0 photos from Wikimedia Commons: Verona (Andrek02), Bergamo (Nazasca),
+// Milano (Skarkkai), Roma (Ypsilon from Finland). See each file page in the links below.
 function renderItalyFlightArt(from, to) {
   return `<div class="art art--flight art--italy">
-    <svg class="art-svg" viewBox="0 0 360 420" role="img" aria-label="Flight from Toronto to Italy, with Verona, Bergamo, Milano and Roma landmarks">
-      <defs>
-        <linearGradient id="italy-paper" x2="0" y2="1"><stop stop-color="#faf3e9"/><stop offset="1" stop-color="#f0e1d3"/></linearGradient>
-      </defs>
-      <rect x="4" y="4" width="352" height="412" rx="22" fill="url(#italy-paper)" stroke="#c9aa9b" stroke-width="1"/>
-      <path d="M34 105 Q180 4 326 105" fill="none" stroke="#a76660" stroke-width="1.7" stroke-dasharray="4 7" stroke-linecap="round"/>
-      <circle cx="34" cy="105" r="5" fill="#a76660"/><circle cx="326" cy="105" r="5" fill="#a76660"/>
-      <g class="plane" fill="none" stroke="#7c4a48" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M-10 0 L10 0 L4 -5 M10 0 L4 5 M-10 0 L-13 -5 M-10 0 L-13 5"/>
-        <animateMotion dur="5s" repeatCount="indefinite" rotate="auto" path="M34 105 Q180 4 326 105"/>
-      </g>
-      <text x="34" y="130" text-anchor="start" class="italy-label">${from.toUpperCase()}</text>
-      <text x="326" y="130" text-anchor="end" class="italy-label">${to.toUpperCase()}</text>
-      <path d="M180 148 v12 M172 154 l8 8 8-8" fill="none" stroke="#a76660" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-
-      <g class="italy-stamp">
-        <rect x="20" y="174" width="152" height="102" rx="12" fill="#e3ceb8"/>
-        <ellipse cx="96" cy="219" rx="51" ry="30" fill="none" stroke="#925e4c" stroke-width="4"/>
-        <ellipse cx="96" cy="218" rx="42" ry="23" fill="none" stroke="#925e4c" stroke-width="2"/>
-        <path d="M46 222 h100 M54 236 h84" stroke="#925e4c" stroke-width="2"/>
-        <g fill="none" stroke="#925e4c" stroke-width="2">
-          <path d="M57 224 q5 -11 10 0 M72 224 q5 -11 10 0 M87 224 q5 -11 10 0 M102 224 q5 -11 10 0 M117 224 q5 -11 10 0"/>
+    <div class="italy-route">
+      <svg viewBox="0 0 320 135" role="img" aria-label="Flight from ${from} to ${to}">
+        <path d="M26 93 Q160 2 294 93" fill="none" stroke="#a76660" stroke-width="1.7" stroke-dasharray="4 7" stroke-linecap="round"/>
+        <circle cx="26" cy="93" r="4.5" fill="#a76660"/><circle cx="294" cy="93" r="4.5" fill="#a76660"/>
+        <g class="plane" fill="none" stroke="#7c4a48" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M-10 0 L10 0 L4 -5 M10 0 L4 5 M-10 0 L-13 -5 M-10 0 L-13 5"/>
+          <animateMotion dur="5s" repeatCount="indefinite" rotate="auto" path="M26 93 Q160 2 294 93"/>
         </g>
-        <text x="96" y="263" text-anchor="middle" class="italy-city">VERONA</text>
-      </g>
-      <g class="italy-stamp">
-        <rect x="188" y="174" width="152" height="102" rx="12" fill="#d8dfcf"/>
-        <path d="M206 240 Q266 220 324 240 v10 H206Z" fill="#7c8d72"/>
-        <path d="M217 236 v-19 h15 v19 M236 231 v-25 h23 v27 M264 234 v-38 h17 v39 M287 234 v-23 h26 v25" fill="#e9e6d8" stroke="#70816b" stroke-width="2"/>
-        <path d="M268 195 v-10 h9 v10 M263 185 h19 M271 185 v-6" fill="none" stroke="#70816b" stroke-width="2"/>
-        <path d="M204 249 q30 -10 60 0 t60 0" fill="none" stroke="#70816b" stroke-width="2"/>
-        <text x="264" y="263" text-anchor="middle" class="italy-city">BERGAMO</text>
-      </g>
-      <g class="italy-stamp">
-        <rect x="20" y="288" width="152" height="102" rx="12" fill="#dce4e9"/>
-        <path d="M44 352 h104 M51 346 v-35 l10 -9 10 9 v35 M74 346 v-43 l9 -11 9 11 v43 M94 346 v-52 l10 -14 10 14 v52 M117 346 v-43 l9 -11 9 11 v43 M140 346 v-35 l9 -9" fill="none" stroke="#72889a" stroke-width="2.6" stroke-linejoin="round"/>
-        <path d="M44 352 h104 M73 329 h64 M88 346 v-19 h16 v19 M112 346 v-19 h16 v19" fill="none" stroke="#72889a" stroke-width="2"/>
-        <text x="96" y="376" text-anchor="middle" class="italy-city">MILANO</text>
-      </g>
-      <g class="italy-stamp">
-        <rect x="188" y="288" width="152" height="102" rx="12" fill="#dcd8ce"/>
-        <path d="M208 354 h112 M220 348 v-32 h88 v32 M230 316 v-12 h68 v12 M249 304 v-14 h30 v14" fill="none" stroke="#89908a" stroke-width="2.5"/>
-        <path d="M234 342 q9 -18 18 0 M253 342 q9 -18 18 0 M272 342 q9 -18 18 0" fill="none" stroke="#89908a" stroke-width="2"/>
-        <path d="M239 348 q25 8 50 0 M220 354 q44 9 88 0" fill="none" stroke="#80a7b1" stroke-width="2"/>
-        <text x="264" y="376" text-anchor="middle" class="italy-city">ROMA</text>
-      </g>
-      <path d="M166 401 q7 -9 14 1 q7 -10 14 -1 q0 8 -14 15 q-14 -7 -14 -15" fill="#b97170" opacity=".8"/>
-    </svg>
+        <text x="26" y="119" text-anchor="start" class="italy-label">${from.toUpperCase()}</text>
+        <text x="294" y="119" text-anchor="end" class="italy-label">${to.toUpperCase()}</text>
+      </svg>
+    </div>
+    <div class="italy-photo-grid">
+      <figure class="italy-photo">
+        <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Arena_di_Verona_fuori_2022_%281%29.jpg/330px-Arena_di_Verona_fuori_2022_%281%29.jpg" alt="Arena di Verona" loading="eager">
+        <figcaption>VERONA</figcaption>
+      </figure>
+      <figure class="italy-photo italy-photo--bergamo">
+        <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/0Bergamo_citt%C3%A0_alta-colli_di_Bergamo.jpg/330px-0Bergamo_citt%C3%A0_alta-colli_di_Bergamo.jpg" alt="Bergamo Alta" loading="eager">
+        <figcaption>BERGAMO</figcaption>
+      </figure>
+      <figure class="italy-photo">
+        <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Milan-duomo-front-facade.jpg/330px-Milan-duomo-front-facade.jpg" alt="Duomo di Milano" loading="eager">
+        <figcaption>MILANO</figcaption>
+      </figure>
+      <figure class="italy-photo">
+        <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Fontana_di_Trevi_front_view.jpg/330px-Fontana_di_Trevi_front_view.jpg" alt="Fontana di Trevi a Roma" loading="eager">
+        <figcaption>ROMA</figcaption>
+      </figure>
+    </div>
   </div>`;
 }
 
