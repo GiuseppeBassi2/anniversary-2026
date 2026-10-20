@@ -42,7 +42,9 @@
 .scene--furba-pop .scene__media::before,
 .scene--furba-pop .scene__media::after,
 .scene--wine-pop .scene__media::before,
-.scene--wine-pop .scene__media::after {
+.scene--wine-pop .scene__media::after,
+.scene--dessert-pop .scene__media::before,
+.scene--dessert-pop .scene__media::after {
   position: absolute; z-index: 10; pointer-events: none;
   font-size: clamp(1.7rem, 7vw, 2.5rem);
   filter: drop-shadow(0 3px 2px rgba(50, 40, 30, .16));
@@ -92,3 +94,5 @@
 .scene--spa-pop .scene__media::after { content: "💆‍♀️❤️"; right: 3%; bottom: 6%; animation-delay: -.6s; }
 .scene--wine-pop .scene__media::before { content: "🍝🍷"; left: 3%; top: 4%; }
 .scene--wine-pop .scene__media::after { content: "🤌😂"; right: 3%; bottom: 6%; animation-delay: -.6s; }
+.scene--dessert-pop .scene__media::before { content: "🍰😍"; left: 3%; top: 4%; }
+.scene--dessert-pop .scene__media::after { content: "🧁✨"; right: 3%; bottom: 6%; animation-delay: -.6s; }
