@@ -244,9 +244,9 @@ function familyLineup() {
 // CC0 photographs from Wikimedia Commons. Source file pages:
 // Italy: Arena_di_Verona_fuori_2022_(1).jpg; 0Bergamo_città_alta-colli_di_Bergamo.jpg;
 // Milan-duomo-front-facade.jpg; Fontana_di_Trevi_front_view.jpg.
-// Korea: Incheon-international-airport.jpg; Seoul,_South_Korea_(Unsplash).jpg;
-// Cherry_blossoms_in_Seoul_Forest,_South_Korea2.jpg;
-// Haedong_Yonggungsa_Temple_sunset_view.jpg.
+// Korea: Haedong_Yonggungsa_Temple_sunset_view.jpg; Gyeongbokgung_Palace_at_Night.jpg;
+// Bukchon-ro_11-gil_street_with_hanok_houses_at_blue_hour_in_Bukchon_Hanok_Village_Seoul.jpg;
+// Namsan_Tower_sunset,_Seoul.jpg.
 const destinationPhotos = {
   italy: [
     ["https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Verona_cityscape_sunny.jpg/500px-Verona_cityscape_sunny.jpg", "Verona e il fiume Adige", "VERONA", ""],
@@ -255,10 +255,10 @@ const destinationPhotos = {
     ["https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Fontana_di_Trevi_front_view.jpg/330px-Fontana_di_Trevi_front_view.jpg", "Fontana di Trevi a Roma", "ROMA", ""],
   ],
   korea: [
-    ["https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Incheon-international-airport.jpg/330px-Incheon-international-airport.jpg", "Aeroporto di Incheon", "INCHEON", ""],
-    ["https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Seoul%2C_South_Korea_%28Unsplash%29.jpg/330px-Seoul%2C_South_Korea_%28Unsplash%29.jpg", "Seoul", "SEOUL", ""],
-    ["https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/Cherry_blossoms_in_Seoul_Forest%2C_South_Korea2.jpg/330px-Cherry_blossoms_in_Seoul_Forest%2C_South_Korea2.jpg", "Ciliegi in fiore in Corea", "BLOSSOMS", ""],
-    ["https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Haedong_Yonggungsa_Temple_sunset_view.jpg/330px-Haedong_Yonggungsa_Temple_sunset_view.jpg", "Tempio Haedong Yonggungsa sul mare a Busan", "BUSAN", " destination-photo--busan"],
+    ["https://commons.wikimedia.org/wiki/Special:FilePath/Haedong_Yonggungsa_Temple_sunset_view.jpg?width=500", "Tempio Haedong Yonggungsa sul mare a Busan", "BUSAN · HAEDONG", " destination-photo--busan"],
+    ["https://commons.wikimedia.org/wiki/Special:FilePath/Gyeongbokgung_Palace_at_Night.jpg?width=500", "Palazzo Gyeongbokgung illuminato a Seoul", "GYEONGBOKGUNG", "", ["Lunisaa", "https://commons.wikimedia.org/wiki/File:Gyeongbokgung_Palace_at_Night.jpg", "CC BY 4.0", "https://creativecommons.org/licenses/by/4.0/"]],
+    ["https://commons.wikimedia.org/wiki/Special:FilePath/Bukchon-ro_11-gil_street_with_hanok_houses_at_blue_hour_in_Bukchon_Hanok_Village_Seoul.jpg?width=500", "Vicolo tradizionale di Bukchon a Seoul", "BUKCHON", "", ["Basile Morin", "https://commons.wikimedia.org/wiki/File:Bukchon-ro_11-gil_street_with_hanok_houses_at_blue_hour_in_Bukchon_Hanok_Village_Seoul.jpg", "CC BY-SA 4.0", "https://creativecommons.org/licenses/by-sa/4.0/"]],
+    ["https://commons.wikimedia.org/wiki/Special:FilePath/Namsan_Tower_sunset%2C_Seoul.jpg?width=500", "N Seoul Tower al tramonto", "N SEOUL TOWER", "", ["Rtflakfizer", "https://commons.wikimedia.org/wiki/File:Namsan_Tower_sunset,_Seoul.jpg", "CC BY-SA 4.0", "https://creativecommons.org/licenses/by-sa/4.0/"]],
   ],
   japan: [
     ["https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Shinkansen_N700_Z13.jpg/960px-Shinkansen_N700_Z13.jpg", "Treno Shinkansen in Giappone", "TRAINS", ""],
