@@ -255,7 +255,7 @@ export const story = [
   a6.video(video("F", 31), { slug: "pool-outdoor", lines: ["Sooo cool mia bambina god of water 🌊👑😍", "🏊‍♀️💦🧜‍♀️❤️"], effect: "pool-pop" }),
   a6.media([photo("F", 32), video("F", 33)], { slug: "pool-night", layout: "diag-two", lines: ["Moooolto furba faces 😏😂", "We are so stupid together 🤪❤️"], effect: "furba-pop" }),
   a6.media([video("F", 35), video("F", 36)], { slug: "car-faces", layout: "diag-two", lines: ["Per favore amore, I want to travel with you like this forever 🥺🚗🌾❤️", "🌾😍🌾"], effect: "hay-pop" }),
-  a6.media([photo("F", 9), video("F", 10), video("F", 30)], { slug: "car-snack-sleep", lines: ["Please amore don’t stop singing 🥺🎤😍❤️", "🥰💕🎶"], effect: "eyes-pop" }),
+  a6.media([photo("F", 9), video("F", 10), video("F", 30)], { slug: "car-snack-sleep", layout: "three-videos", lines: ["Please amore don’t stop singing 🥺🎤😍❤️", "🥰💕🎶"], effect: "eyes-pop" }),
   a6.video(video("F", 37), { slug: "tuscany-sunset", lines: ["Bello sunset with Toscana 🌅☀️😍", "❤️🥰✨"], effect: "eyes-pop" }),
 
   // PISA
@@ -281,16 +281,16 @@ export const story = [
 
   // JUL 24: white shirt, travel day
   a7.media([photo("F", 58), photo("F", 42), video("F", 59)], { slug: "paris-ready", lines: ["Ready for Paris 🗼✈️😍❤️"], effect: "travel-pop" }),
-  a7.media([video("F", 60), photo("F", 45)], { slug: "paris-first-walk", layout: "diag-two", lines: ["Min, on the way. Heart included.", "First walk."] }),
-  a7.media([photo("F", 61), photo("F", 62)], { slug: "paris-grass", layout: "diag-two", lines: ["Lying on the grass.", "Nowhere to be."] }),
-  a7.video(video("F", 63), { slug: "paris-eiffel-sunset" }),
-  a7.media([photo("F", 64)], { slug: "paris-dinner", lines: ["First dinner.", "She is very happy."] }),
+  a7.media([video("F", 60), photo("F", 45)], { slug: "paris-first-walk", layout: "diag-two", lines: ["Why now so bambina! 🥺😂🥰❤️"], effect: "eyes-pop" }),
+  a7.media([photo("F", 61), photo("F", 62)], { slug: "paris-grass", layout: "diag-two", lines: ["My queen hates grass... but for sure she loves lying with me 🌿🥰", "I love you so much 🥹❤️💕"], effect: "love-pop" }),
+  a7.video(video("F", 63), { slug: "paris-eiffel-sunset", lines: ["🌅🗼😍❤️✨"], effect: "eyes-pop" }),
+  a7.media([photo("F", 64)], { slug: "paris-dinner", lines: ["Food food food! 😋🍝🍷🤤"], effect: "food-pop" }),
 
   // JUL 25: blue top, Louvre
-  a7.media([photo("F", 65)], { slug: "paris-exhibit", lines: ["My favorite exhibit."] }),
-  a7.video(video("F", 67)),
-  a7.media([video("F", 66), video("F", 70)], { slug: "paris-louvre-blue", layout: "diag-two", lines: ["Louvre. Blue top.", "No complaints."] }),
-  a7.video(video("F", 69), { slug: "paris-egypt", lines: ["Min and her ancient friend."] }),
+  a7.media([photo("F", 65)], { slug: "paris-exhibit", lines: ["And now... Min will become again comedian queen... 👑😂🤣", "😂🤣🤭😹"], effect: "laugh-pop" }),
+  a7.video(video("F", 67), { slug: "paris-comedian-two", lines: ["😂🤣😂🤣🤭😹"], effect: "laugh-pop" }),
+  a7.media([video("F", 66), video("F", 70)], { slug: "paris-louvre-blue", layout: "diag-two", lines: ["Mia regina 👑😍❤️💕", "😂🤣😂🤣😹🤭"], effect: "laugh-pop" }),
+  a7.video(video("F", 69), { slug: "paris-egypt", lines: ["😂🤣😂🤣😂🤣🤭"], effect: "laugh-pop" }),
   a7.media([photo("F", 68), photo("F", 71), photo("F", 72)], { slug: "paris-hallway", lines: ["A very long hallway.", "Perfect for a kiss."] }),
   a7.media([photo("F", 73)], { slug: "paris-river", lines: ["Golden hour by the river."] }),
   a7.video(video("F", 74), { slug: "paris-slush", lines: ["Slush. Eiffel. Blue top again."] }),
