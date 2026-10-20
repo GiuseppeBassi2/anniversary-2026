@@ -1,9 +1,9 @@
-// Chapter-five Italy destination art. Photos: Wikimedia Commons files released under CC0 / public domain.
+// Chapter-five Italy destination art. Photos: Wikimedia Commons.
 const commons = (filename) => `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(filename)}?width=500`;
 const photos = [
   [commons("Val D Orcia In Autumn (179351679).jpeg"), "Colline della Val d'Orcia in autunno", "VAL D'ORCIA"],
   [commons("View-from-Rialto-Bridge-Venice-20050524-013.jpg"), "Canal Grande visto dal Ponte di Rialto a Venezia", "VENEZIA"],
-  [commons("Positano 2005a.jpg"), "Positano sulla Costiera Amalfitana", "COSTIERA AMALFITANA"],
+  [commons("Positano (Italy) 03.jpg"), "Positano sulla Costiera Amalfitana", "COSTIERA AMALFITANA"],
   [commons("Torre di Pisa, Pisa, Toscana, Italia.jpg"), "Torre pendente di Pisa", "PISA"],
 ];
 

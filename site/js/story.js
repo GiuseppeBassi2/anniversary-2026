@@ -46,7 +46,6 @@ const a5 = make(ACT5);
 const a6 = make(ACT6);
 const a7 = make(ACT7);
 const a8 = make(ACT8);
-const extra = make("Extra moments");
 
 export const story = [
   // ───────────────────────── ACT I ─────────────────────────
@@ -210,27 +209,26 @@ export const story = [
   a5.text({ slug: "apart-two", title: "Again long distance 😢", tone: "medium" }),
   a5.media([photo("E", 2), photo("E", 9), photo("E", 13), photo("E", 22), photo("E", 5)], { slug: "paparazzi", layout: "five", lines: ["Tuo paparazzi boyfriend loves you so much 📸😂🥰❤️"], effect: "love-pop" }),
   a5.media([photo("E", 1), photo("E", 3), photo("E", 8), photo("E", 11)], { slug: "distance-again-one", lines: ["More photos of my bella 😍❤️"], effect: "eyes-pop" }),
-  a5.media([photo("E", 4), photo("E", 6)], { slug: "pachirisu", layout: "side-two", lines: ["Mio amore, this squirrel looks like Pachirisu 🐿️😂🤣❤️"], effect: "squirrel-pop" }),
+  a5.media([photo("E", 4), photo("E", 6)], { slug: "pachirisu", layout: "side-two", lines: ["Mio amore squirrel looks like Pachirisu 🐿️😂🤣❤️"], effect: "squirrel-pop" }),
   a5.media([photo("E", 16), photo("E", 10), photo("E", 17), photo("E", 14)], { slug: "distance-again-two", lines: ["Eeee? How can you be so cute? 🥹💕"], effect: "love-pop" }),
-  a5.media([photo("E", 12), photo("E", 23)], { slug: "long-distance-gestures", lines: ["Your loyal boyfriend’s gestures for you during long distance 💐🥹", "Little things, big love ❤️"], effect: "magic-pop" }),
+  a5.media([photo("E", 12), photo("E", 23)], { slug: "long-distance-gestures", lines: ["Your loyal boyfriend’s gestures for you during long distance 💐🥹❤️"], effect: "magic-pop" }),
   a5.media([photo("E", 15), photo("E", 18)], { slug: "distance-again-three", layout: "side-two", lines: ["Eee? Again furba??? 😏🦊😂🥰❤️"], effect: "furba-pop" }),
   a5.media([photo("E", 19), photo("E", 24), photo("E", 25), photo("E", 26)], { slug: "distance-again-four", lines: ["Still my favourite face in the world 😍🥰😘❤️"], effect: "eyes-pop" }),
 
-  // ───────────────────────── ACT VI · ITALY (F) ─────────────────────────
+  // ───────────────── ACT VI · ITALY (F) ─────────────────────────
   a6.flight({ slug: "flight-italy-again", from: "Korea", to: "Italy", layout: "destination-chapter", kicker: "Chapter five", title: "Italy", landmarks: "italy2" }),
 
   // JULY: flowers + road
-  a6.media([photo("F", 1), video("F", 2)], { slug: "july-flowers", layout: "side-two", lines: ["July started with flowers 💐🥹", "Finalmente together in Italy again ❤️"], effect: "love-pop" }),
-  a6.video(video("F", 23), { slug: "rose-in-car", lines: ["Mia regina with a rose in the car 🌹😍❤️"], effect: "eyes-pop" }),
+  a6.media([photo("F", 1), video("F", 2)], { slug: "july-flowers", layout: "side-two", lines: ["Mia regina happy for the flowers 🌹😍❤️", "Finalmente together in Italy again ❤️"], effect: "love-pop" }),
   a6.media([video("F", 22), video("F", 21)], { slug: "car-cute", layout: "side-two", lines: ["Driving with my bella 🚗🥰", "Cute even when she is dormissima 😴❤️"], effect: "travel-pop" }),
   a6.media([video("F", 35), video("F", 36)], { slug: "car-faces", layout: "side-two", lines: ["Ei tu! Why so many faces in the car? 😂🚗"], effect: "laugh-pop" }),
   a6.media([photo("F", 9), video("F", 10)], { slug: "car-snack-sleep", layout: "side-two", lines: ["Snack stop, and then dormissima again 🥐😴❤️"], effect: "sleepy-pop" }),
 
   // FIRENZE
-  a6.media([video("F", 3), video("F", 4)], { slug: "florence-white-dress", layout: "side-two", lines: ["Firenze with my bella in white dress 🤍😍", "So carina, mia regina 👑❤️"], effect: "eyes-pop" }),
-  a6.media([photo("F", 5)], { slug: "florence-car-heart", lines: ["Still the most beautiful view for me 🥹❤️"], effect: "love-pop" }),
-  a6.video(video("F", 6), { slug: "florence-drink", lines: ["Cold drink in Firenze 🥤😋", "Cutie bambina with a straw 🥰"], effect: "gelato-pop" }),
-  a6.media([video("F", 7), video("F", 8)], { slug: "uffizi", layout: "side-two", lines: ["Min at the Uffizi 🖼️✨", "Honestly the best artwork was her 🥹❤️"], effect: "art-pop" }),
+  a6.media([video("F", 3), photo("F", 5)], { slug: "florence-white-dress", layout: "side-two", lines: ["Firenze with my bella in white dress 🤍😍", "So carina, mia regina 👑❤️"], effect: "eyes-pop" }),
+  a6.video(video("F", 4), { slug: "duck-shop", lines: ["Why mia bambina so obsessed with papere 🦆😂🤣", "😂🤣🦆🤭"], effect: "duck-chaos" }),
+  a6.video(video("F", 6), { slug: "florence-drink", lines: ["Mia bella molto loves granita and is mooolto carina 🥤😋🥰"], effect: "gelato-pop" }),
+  a6.media([video("F", 7), video("F", 8)], { slug: "uffizi", layout: "side-two", lines: ["Mio amore doing stupid thing way in Uffizi 🖼️😂🤣❤️"], effect: "art-pop" }),
   a6.media([video("F", 11), video("F", 12)], { slug: "florence-night", layout: "side-two", lines: ["Firenze by night 🌙🥰", "Black dress, mia bella 🖤😍"], effect: "love-pop" }),
 
   // VAL D'ORCIA + PIENZA
@@ -244,6 +242,7 @@ export const story = [
   a6.media([video("F", 19), video("F", 20)], { slug: "umbria-dinner", layout: "side-two", lines: ["Umbria dinner: Min must eat a botto 🍝😂", "Mooolto happy bambina 😋❤️"], effect: "food-pop" }),
 
   // NAPOLI
+  a6.video(video("F", 23), { slug: "rose-in-car", lines: ["I know! Sei vorrei io mangio tu 🥺😍❤️"], effect: "eyes-pop" }),
   a6.media([photo("F", 25)], { slug: "naples-selfie", lines: ["Napoli 🍕🇮🇹", "She forgot everything, but not my kisses 😘😂"], effect: "naples-pop" }),
   a6.media([video("F", 28), video("F", 29)], { slug: "naples-street-food", layout: "side-two", lines: ["Napoli street food 🍤😋", "Min with hungry eyes 😍🤣"], effect: "naples-pop" }),
 
@@ -278,15 +277,33 @@ export const story = [
 
   // ───────────────── ACT VII · PARIS AND NOW ─────────────────────────
   a7.text({ slug: "paris", kicker: "Also", title: "Paris.", lines: ["Because why not."] }),
-  a7.video(video("F", 63)),
-  a7.media([photo("F", 65)], { lines: ["My favorite exhibit."] }),
+
+  // JUL 24: white shirt, travel day
+  a7.video(video("F", 59), { slug: "paris-airport", lines: ["Airport.", "Tired. Excited."] }),
+  a7.media([photo("F", 45)], { slug: "paris-metro", lines: ["Min, on the way. Heart included."] }),
+  a7.video(video("F", 60), { slug: "paris-first-walk", lines: ["First walk."] }),
+  a7.media([photo("F", 61)], { slug: "paris-grass", lines: ["Lying on the grass.", "Nowhere to be."] }),
+  a7.video(video("F", 63), { slug: "paris-eiffel-sunset" }),
+  a7.media([photo("F", 64)], { slug: "paris-dinner", lines: ["First dinner.", "She is very happy."] }),
+
+  // JUL 25: blue top, Louvre
+  a7.media([photo("F", 65)], { slug: "paris-exhibit", lines: ["My favorite exhibit."] }),
   a7.video(video("F", 67)),
-  a7.media([photo("F", 71), photo("F", 72)], { lines: ["A very long hallway.", "Perfect for a kiss."] }),
-  a7.media([photo("F", 73)], { lines: ["Golden hour by the river."] }),
+  a7.media([video("F", 66), video("F", 70)], { slug: "paris-louvre-blue", layout: "diag-two", lines: ["Louvre. Blue top.", "No complaints."] }),
+  a7.video(video("F", 69), { slug: "paris-egypt", lines: ["Min and her ancient friend."] }),
+  a7.media([photo("F", 68), photo("F", 71), photo("F", 72)], { slug: "paris-hallway", lines: ["A very long hallway.", "Perfect for a kiss."] }),
+  a7.media([photo("F", 73)], { slug: "paris-river", lines: ["Golden hour by the river."] }),
+  a7.video(video("F", 74), { slug: "paris-slush", lines: ["Slush. Eiffel. Blue top again."] }),
   a7.video(video("F", 75)),
-  a7.media([photo("F", 78)], { lines: ["Lunch with a view.", "Me eating. Min documenting."] }),
-  a7.video(video("F", 79)),
-  a7.media([photo("F", 82)], { lines: ["Tired. Happy.", "Still leaning on each other."] }),
+
+  // JUL 26: crêpes
+  a7.video(video("F", 79), { slug: "paris-eiffel-kiss" }),
+  a7.video(video("F", 80), { slug: "paris-crepes", lines: ["Crêpes.", "Serious business."] }),
+  a7.media([photo("F", 81), photo("F", 78)], { slug: "paris-lunch", lines: ["Lunch with a view.", "Me eating. Min documenting."] }),
+
+  // JUL 27: grey shirt, last day
+  a7.media([photo("F", 76), photo("F", 77)], { slug: "paris-last-day", lines: ["Last day.", "Dinner. Dessert. Same priorities."] }),
+  a7.media([photo("F", 82)], { slug: "paris-tired", lines: ["Tired. Happy.", "Still leaning on each other."] }),
 
   // MANY MINNIES
   a7.text({ slug: "minnies-intro", kicker: "Field guide", title: "The many Minnies.", lines: ["Quick. Don’t blink."] }),
@@ -311,7 +328,7 @@ export const story = [
   a7.media([photo("G", 2), photo("G", 1), photo("G", 4)], { lines: ["Still Min.", "Still the best part of my day."] }),
   a7.text({ slug: "what-next", title: "So what happens next?", tone: "big" }),
 
-  // ───────────────────────── ACT VIII ─────────────────────────
+  // ───────────────── ACT VIII ─────────────────────────
   a8.art("princeton-fall", { lines: ["Princeton, New Jersey.", "Yes, really."], kicker: "Next chapter", tone: "warm" }),
   a8.art("princeton-snow", { lines: ["Snow. A train to New York.", "Coffee in paper cups."], tone: "cold" }),
   a8.art("home", { lines: ["Our future home.", "Small. Warm. Porch light on."] }),
@@ -331,33 +348,6 @@ export const story = [
 
   a8.media([photo("F", 47)], { slug: "final-a", tone: "final", lines: ["I want you in it."] }),
   a8.media([photo("F", 47)], { slug: "final-b", tone: "final", lines: ["Happy anniversary, Min."] }),
-  a8.text({ slug: "final-date", tone: "night", title: "26.09.2026", lines: ["— Giuseppe"], last: true, archiveNext: true }),
+  a8.text({ slug: "final-date", tone: "night", title: "26.09.2026", lines: ["— Giuseppe"], last: true }),
 
-
-  // EXTRA PHOTOS — every image not used in the main story
-  extra.text({ slug: "archive-intro", kicker: "Our archive", title: "Every moment", lines: ["All our photos and videos ❤️"] }),
-  ...[
-    ["F", 45],
-    ["F", 61],
-    ["F", 64],
-    ["F", 68],
-    ["F", 76],
-    ["F", 77],
-    ["F", 81],
-  ].map(([folder, n]) => extra.media([photo(folder, n)], {
-    slug: `extra-photo-${folder.toLowerCase()}-${pad(n)}`,
-  })),
-
-  // EXTRA VIDEOS — clips not included in the main story
-  ...[
-    ["F", 59],
-    ["F", 60],
-    ["F", 66],
-    ["F", 69],
-    ["F", 70],
-    ["F", 74],
-    ["F", 80],
-  ].map(([folder, n]) => extra.video(video(folder, n), {
-    slug: `extra-video-${folder.toLowerCase()}-${pad(n)}`,
-  })),
 ];
