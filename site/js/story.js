@@ -90,7 +90,7 @@ export const story = [
   a1.media([photo("A", 37), photo("A", 38)], { lines: ["Beautiful pictures by Giovanni 📸🍁", "💕❤️💕"] }),
   a1.video(video("A", 39)),
   a1.media([photo("A", 30), photo("A", 31)], { slug: "chicago-one", lines: ["Chicago with my bella 🏙️🥰❤️"], effect: "love-pop" }),
-  a1.media([photo("A", 32), photo("A", 34)], { slug: "chicago-two", lines: ["Exploring Chicago together 🥹🏙️❤️"] }),
+  a1.media([photo("A", 32), photo("A", 34)], { slug: "chicago-two", layout: "stacked-wide", lines: ["Exploring Chicago together 🥹🏙️❤️"] }),
   a1.media([photo("A", 33)], { slug: "chicago-squirrel", lines: ["So funny my squirrel 🐿️😂🥰❤️"], effect: "squirrel-pop" }),
   a1.media([photo("A", 28), photo("A", 57), photo("A", 63), photo("A", 64)], {
     slug: "dormissimo-photos", lines: ["Dormissimo bambino 😴💤🥰"],
