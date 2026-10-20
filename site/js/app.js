@@ -1,6 +1,6 @@
-import { sceneTypes, story } from "./story.js?v=20261020e";
-import { renderArt, renderFlightArt } from "./art.js?v=20261020e";
-import { renderItalyAgainArt } from "./italy2.js?v=20261020e";
+import { sceneTypes, story } from "./story.js?v=20261020f";
+import { renderArt, renderFlightArt } from "./art.js?v=20261020f";
+import { renderItalyAgainArt } from "./italy2.js?v=20261020f";
 
 const experience = document.querySelector(".experience");
 const stage = document.querySelector("#stage");
@@ -27,7 +27,7 @@ function el(tag, className, text) {
   return element;
 }
 
-/* ───────────── card layouts (natural aspect, never cropped) ───────────── */
+/* ─────────── card layouts (natural aspect, never cropped) ─────────── */
 
 const PRESETS = {
   1: [{ c: true, w: 100, h: 100, rot: 0 }],
@@ -77,6 +77,10 @@ function presetFor(scene) {
   if (scene.layout === "feature-video") return [
     { l: 0, t: 0, w: 100, h: 50, rot: -1 },
     { l: 21, b: 0, w: 58, h: 50, rot: 1 },
+  ];
+  if (scene.layout === "diag-two") return [
+    { l: 0, t: 0, w: 52, h: 60, rot: -2 },
+    { r: 0, b: 0, w: 52, h: 60, rot: 2 },
   ];
   if (scene.layout === "side-two") return [
     { l: 0, t: 3, w: 49, h: 94, rot: -1.5 },
@@ -158,7 +162,7 @@ function dropCard(card) {
   goToScene(currentIndex + (lastDirection === "next" ? 1 : -1));
 }
 
-/* ───────────── copy ───────────── */
+/* ─────────── copy ─────────── */
 
 function createCopy(scene) {
   const copy = el("div", "scene__copy");
@@ -186,7 +190,7 @@ function createCopy(scene) {
   return copy;
 }
 
-/* ───────────── renderers ───────────── */
+/* ─────────── renderers ─────────── */
 
 function renderText(scene, element) {
   element.append(createCopy(scene));
@@ -282,7 +286,7 @@ const renderers = {
   rapid: renderRapid,
 };
 
-/* ───────────── stage ───────────── */
+/* ─────────── stage ─────────── */
 
 function stopMedia() {
   if (rapidTimer) {
