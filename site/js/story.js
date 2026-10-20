@@ -219,7 +219,7 @@ export const story = [
   a6.flight({ slug: "flight-italy-again", from: "Korea", to: "Italy", layout: "destination-chapter", kicker: "Chapter five", title: "Italy", landmarks: "italy2" }),
 
   // JULY: flowers + road
-  a6.media([photo("F", 1), video("F", 2)], { slug: "july-flowers", layout: "side-two", lines: ["Mia regina happy for the flowers 🌹😍❤️", "Finalmente together in Italy again ❤️"], effect: "love-pop" }),
+  a6.media([photo("F", 1), video("F", 2)], { slug: "july-flowers", layout: "diag-two", lines: ["Mia regina happy for the flowers 🌹😍❤️", "Finalmente together in Italy again ❤️"], effect: "love-pop" }),
 
   // FIRENZE
   a6.media([video("F", 3), photo("F", 5)], { slug: "florence-white-dress", layout: "side-two", lines: ["Firenze with my bella in white dress 🤍😍", "So carina, mia regina 👑❤️"], effect: "eyes-pop" }),
@@ -234,7 +234,7 @@ export const story = [
   a6.video(video("F", 14), { slug: "val-dorcia", lines: ["Mia regina molto bella with animals 🐑🐐🥹💚", "Val d’Orcia: green dress, green hills 🌿💚🍀"], effect: "totoro-pop" }),
 
   // UMBRIA
-  a6.media([photo("F", 15)], { slug: "road-umbria", lines: ["On the road to Umbria with pillow 🚗🛏️😂"], effect: "sleepy-pop" }),
+  a6.media([photo("F", 15), video("F", 37)], { slug: "road-umbria", layout: "diag-two", lines: ["On the road to Umbria with pillow 🚗🛏️☀️😂"], effect: "sleepy-pop" }),
   a6.media([photo("F", 17), video("F", 16)], { slug: "umbria-chill", layout: "side-two", lines: ["My regina finally can chill... promise our life will be like this 🥹🛏️❤️", "Umbria 😍✨"], effect: "love-pop" }),
   a6.video(video("F", 18), { slug: "umbria-before-dinner", lines: ["Min before graaaaande dinner... 😋🍝🤤", "so happy, so cute 🥰❤️"], effect: "food-pop" }),
   a6.media([video("F", 19), video("F", 20)], { slug: "umbria-dinner", layout: "diag-two", lines: ["My bambina immediately drunk with wine as always 🍷🥴😂🤣", "🍝🤌😂"], effect: "wine-pop" }),
@@ -261,13 +261,13 @@ export const story = [
   a6.media([photo("F", 38)], { slug: "pisa", lines: ["E! Also Pisa! How is possible so many things! 🗼😍🤯", "❤️💕💖💗💘💝🥰"], effect: "love-pop" }),
 
   // VENEZIA
-  a6.media([photo("F", 40), photo("F", 42), video("F", 41)], { slug: "venice", lines: ["Venezia 🚤💋", "Canals, selfies and kisses ❤️"], effect: "kiss-pop" }),
+  a6.media([photo("F", 40), video("F", 41)], { slug: "venice", layout: "diag-two", lines: ["Min in Venezia 🛶😍💋❤️"], effect: "kiss-pop" }),
 
   // SPA
   a6.media([photo("F", 43), photo("F", 44)], { slug: "spa", lines: ["SPA day 🧖‍♀️✨", "My bella relaxed like a queen 👑🥹❤️"], effect: "spa-pop" }),
 
   // LAGO DI GARDA: Riva, Tenno, Limone
-  a6.media([photo("F", 46), video("F", 30), video("F", 37)], { slug: "road-lake", lines: ["Next stop: Lago di Garda 🚗💙", "Navigator Min: asleep 😴😂"], effect: "sleepy-pop" }),
+  a6.media([photo("F", 46), video("F", 30)], { slug: "road-lake", lines: ["Next stop: Lago di Garda 🚗💙", "Navigator Min: asleep 😴😂"], effect: "sleepy-pop" }),
   a6.video(video("F", 50), { slug: "riva-del-garda", lines: ["Riva del Garda 💙🏞️", "My bella in blue 🥹❤️"], effect: "lake-pop" }),
   a6.media([photo("F", 47), video("F", 49)], { slug: "riva-kisses", layout: "side-two", lines: ["Blue couple 💙😘", "Sooo many kisses by the lake ❤️"], effect: "kiss-pop" }),
   a6.media([photo("F", 48)], { slug: "riva-playground", lines: ["Min on the bunny 🐰😂🥰"], effect: "laugh-pop" }),
