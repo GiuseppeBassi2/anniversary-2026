@@ -128,13 +128,14 @@ export const story = [
   a3.media([photo("C", 11)], { slug: "mathematician-glasses", lines: ["For sure mathematician glasses Min! 🤓😂🤣💕❤️"] }),
   a3.media([photo("C", 14), photo("C", 15), photo("C", 16), photo("C", 17)], { slug: "distance-min-two", lines: ["Eeee? My bellissima again 😍💕"] }),
   a3.media([photo("C", 6)], { slug: "papera-girlfriend", lines: ["My papera girlfriend... I love! 🦆🥹💕"] }),
+  a3.media([photo("C", 18), photo("C", 19), photo("C", 21), photo("C", 22)], { slug: "distance-min-three", lines: ["So many little moments of you 🥰❤️"] }),
   a3.media([photo("C", 8)], { slug: "again-papere", lines: ["Again papere!! 🦆🦆😂❤️"] }),
   a3.media([photo("C", 9)], { slug: "papera-water", lines: ["Eeee?? Why you are papera in water! 🦆🌊😂🤣"] }),
-  a3.media([photo("C", 18), photo("C", 19), photo("C", 21), photo("C", 22), photo("C", 23)], { slug: "distance-min-three", layout: "five", lines: ["So many little moments of you 🥰❤️"] }),
+  a3.media([photo("C", 23), photo("C", 25), photo("C", 26), photo("C", 27)], { slug: "distance-min-four", lines: ["I never got tired of seeing your face 🥹💕"] }),
   a3.media([photo("C", 1)], { slug: "kiss-from-afar", lines: ["Amore, this is where I would kiss you if we weren't long distance 🥹💋❤️"] }),
-  a3.media([photo("C", 25), photo("C", 26), photo("C", 27), photo("C", 28), photo("C", 29)], { slug: "distance-min-four", layout: "five", lines: ["I never got tired of seeing your face 🥹💕"] }),
+  a3.media([photo("C", 28), photo("C", 29), photo("C", 30)], { slug: "distance-min-five", lines: ["Little glimpses of my furba bambina 😏💕"] }),
   a3.video(video("C", 24), { slug: "carino-kiss", lines: ["My motivation... I love your carino kiss... please more 🥹💋😘💕❤️"] }),
-  a3.media([photo("C", 30), photo("C", 31), photo("C", 32), photo("C", 33)], { slug: "distance-min-five", lines: ["My favourite person, even from far away ❤️"] }),
+  a3.media([photo("C", 31), photo("C", 32), photo("C", 33)], { slug: "distance-min-six", lines: ["My favourite person, even from far away ❤️"] }),
 
   // ACT IV: KOREA
   a4.flight({ slug: "flight-korea", from: "Italy", to: "Korea", layout: "destination-chapter", kicker: "Chapter three", title: "Korea", landmarks: "korea" }),
