@@ -1,5 +1,5 @@
-import { sceneTypes, story } from "./story.js?v=20261019o";
-import { renderArt, renderFlightArt } from "./art.js?v=20261019m";
+import { sceneTypes, story } from "./story.js?v=20261020a";
+import { renderArt, renderFlightArt } from "./art.js?v=20261020a";
 
 const experience = document.querySelector(".experience");
 const stage = document.querySelector("#stage");
@@ -68,6 +68,11 @@ function dumpPreset(count) {
 }
 
 function presetFor(scene) {
+  if (scene.layout === "three-videos") return [
+    { l: 0, t: 8, w: 32, h: 84, rot: -1.5 },
+    { l: 34, t: 1, w: 32, h: 84, rot: 1 },
+    { r: 0, b: 6, w: 32, h: 84, rot: -1 },
+  ];
   const count = scene.media.length;
   if (scene.layout === "dump" || count > 5) return dumpPreset(count);
   return PRESETS[count] || dumpPreset(count);
