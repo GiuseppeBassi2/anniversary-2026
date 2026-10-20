@@ -103,6 +103,19 @@ button { color: inherit; font: inherit; }
 }
 .scene--duck-chaos .scene__media::before { content: "🦆😂"; left: 4%; top: 5%; transform: rotate(-12deg); }
 .scene--duck-chaos .scene__media::after { content: "🤣🦆"; right: 4%; top: 14%; animation-delay: -.45s; }
+ .scene--love-pop .scene__media::before,
+.scene--love-pop .scene__media::after,
+.scene--food-pop .scene__media::before,
+.scene--food-pop .scene__media::after {
+  position: absolute; z-index: 10; pointer-events: none;
+  font-size: clamp(1.7rem, 7vw, 2.5rem);
+  filter: drop-shadow(0 3px 2px rgba(50, 40, 30, .16));
+  animation: duck-pop 1.4s ease-in-out infinite alternate;
+}
+.scene--love-pop .scene__media::before { content: "💕✨"; left: 4%; top: 4%; }
+.scene--love-pop .scene__media::after { content: "🥰💖"; right: 3%; bottom: 7%; animation-delay: -.6s; }
+.scene--food-pop .scene__media::before { content: "😋💗"; left: 4%; top: 4%; }
+.scene--food-pop .scene__media::after { content: "🍡✨"; right: 3%; bottom: 7%; animation-delay: -.6s; }
 @keyframes duck-pop { from { translate: 0 0; scale: .9; } to { translate: 0 -.6rem; scale: 1.1; } }
 
 /* copy */
