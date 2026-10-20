@@ -214,15 +214,26 @@ button { color: inherit; font: inherit; }
 .scene--italy-chapter .scene__copy { padding-top: clamp(0.4rem, 3vh, 1.4rem); }
 .scene--italy-chapter .scene__title { font-size: clamp(3.3rem, 16vw, 4.4rem); }
 .art--italy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
   width: min(100cqw, calc(100cqh * 0.857), 24rem);
   aspect-ratio: 360 / 420;
+  padding: 0.65rem;
   overflow: hidden;
+  border: 1px solid #c9aa9b;
   border-radius: 22px;
+  background: #faf3e9;
   box-shadow: 0 16px 40px rgba(89, 54, 42, 0.14);
 }
+.italy-route { flex: 0 0 31%; min-height: 0; }
+.italy-route svg { display: block; width: 100%; height: 100%; }
 .italy-label { fill: #7c4a48; font: 700 10px Inter, sans-serif; letter-spacing: 1.7px; }
-.italy-city { fill: #51453d; font: 700 9px Inter, sans-serif; letter-spacing: 1.4px; }
-.italy-stamp { filter: drop-shadow(0 3px 4px rgba(80, 52, 40, .12)); }
+.italy-photo-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(0, 1fr)); flex: 1; gap: 0.55rem; min-height: 0; }
+.italy-photo { position: relative; margin: 0; overflow: hidden; border-radius: 11px; background: #e6ded4; box-shadow: 0 3px 8px rgba(80, 52, 40, .14); }
+.italy-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.italy-photo--bergamo img { transform: scale(1.27) translateY(-6%); }
+.italy-photo figcaption { position: absolute; inset: auto 0 0; padding: 1.3rem 0.2rem 0.3rem; background: linear-gradient(transparent, rgba(25, 20, 18, .74)); color: #fff; font: 700 0.57rem Inter, sans-serif; letter-spacing: 0.15em; text-align: center; }
 
 .leaves { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
 .leaf {
