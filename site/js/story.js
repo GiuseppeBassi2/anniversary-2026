@@ -220,7 +220,6 @@ export const story = [
 
   // JULY: flowers + road
   a6.media([photo("F", 1), video("F", 2)], { slug: "july-flowers", layout: "side-two", lines: ["Mia regina happy for the flowers 🌹😍❤️", "Finalmente together in Italy again ❤️"], effect: "love-pop" }),
-  a6.media([video("F", 22), video("F", 21)], { slug: "car-cute", layout: "side-two", lines: ["Driving with my bella 🚗🥰", "Cute even when she is dormissima 😴❤️"], effect: "travel-pop" }),
   a6.media([video("F", 35), video("F", 36)], { slug: "car-faces", layout: "side-two", lines: ["Ei tu! Why so many faces in the car? 😂🚗"], effect: "laugh-pop" }),
   a6.media([photo("F", 9), video("F", 10)], { slug: "car-snack-sleep", layout: "side-two", lines: ["Snack stop, and then dormissima again 🥐😴❤️"], effect: "sleepy-pop" }),
 
@@ -244,13 +243,15 @@ export const story = [
 
   // NAPOLI
   a6.video(video("F", 23), { slug: "rose-in-car", lines: ["I know! Sei vorrei io mangio tu 🥺😍❤️"], effect: "eyes-pop" }),
-  a6.media([photo("F", 25)], { slug: "naples-selfie", lines: ["Napoli 🍕🇮🇹", "She forgot everything, but not my kisses 😘😂"], effect: "naples-pop" }),
-  a6.media([video("F", 28), video("F", 29)], { slug: "naples-street-food", layout: "side-two", lines: ["Napoli street food 🍤😋", "Min with hungry eyes 😍🤣"], effect: "naples-pop" }),
+  a6.video(video("F", 22), { slug: "car-singing", lines: ["Giuseppe è bambino. Io canto bene e anche io canti bene. Io non bambina 🥺😍❤️", "😂🎤🚗"], effect: "eyes-pop" }),
+  a6.video(video("F", 21), { slug: "car-carne", lines: ["I love you eating carne... molto perfect you eating carne... will you marry me? 🥩😍💍", "😂🤣❤️"], effect: "laugh-pop" }),
+  a6.media([video("F", 28), video("F", 29)], { slug: "naples-street-food", layout: "diag-two", lines: ["Uffa Min was molto uffa before 😤", "but thankfully I gave her Napoli food and she forgave me 🍕🥰❤️"], effect: "naples-pop" }),
+  a6.media([photo("F", 25)], { slug: "capri-queen", lines: ["My beautiful queen ready for Capri 👑🏝️😍", "⛵✨❤️"], effect: "eyes-pop" }),
 
   // COSTIERA AMALFITANA
-  a6.media([photo("F", 24)], { slug: "amalfi-pasta", lines: ["Costiera Amalfitana 🌊🍝", "My bella and her pasta ❤️😋"], effect: "food-pop" }),
-  a6.media([photo("F", 26), photo("F", 27)], { slug: "amalfi-views", lines: ["Sun, sea and us 🌞🌊❤️"], effect: "soft-sparkle" }),
-  a6.media([photo("F", 34)], { slug: "amalfi-dessert", lines: ["Dessert face 🍰😍🥹", "Il mio cuore ❤️"], effect: "food-pop" }),
+  a6.media([photo("F", 24)], { slug: "capri-model", lines: ["Beautiful model in Capri 📸🏝️😍❤️"], effect: "eyes-pop" }),
+  a6.media([photo("F", 26), photo("F", 27)], { slug: "capri-furba", lines: ["Eeee? Why furba face again! Molto inaccettabile beautiful model in Capri! 😏🦊😂🤣"], effect: "furba-pop" }),
+  a6.media([photo("F", 34)], { slug: "amalfi-dessert", lines: ["Dessert face 🍰😍🥹", "Il mio cuore ❤️"], effect: "dessert-pop" }),
 
   // PISCINA
   a6.video(video("F", 31), { slug: "pool-outdoor", lines: ["Pool time 🏊‍♀️💦", "Mia sirenetta 🧜‍♀️❤️"], effect: "pool-pop" }),
