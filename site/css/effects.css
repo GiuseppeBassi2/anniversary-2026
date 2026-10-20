@@ -96,3 +96,12 @@
 .scene--wine-pop .scene__media::after { content: "🤌😂"; right: 3%; bottom: 6%; animation-delay: -.6s; }
 .scene--dessert-pop .scene__media::before { content: "🍰😍"; left: 3%; top: 4%; }
 .scene--dessert-pop .scene__media::after { content: "🧁✨"; right: 3%; bottom: 6%; animation-delay: -.6s; }
+.scene--hay-pop .scene__media::before,
+.scene--hay-pop .scene__media::after {
+  position: absolute; z-index: 10; pointer-events: none;
+  font-size: clamp(2rem, 9vw, 3.2rem);
+  filter: drop-shadow(0 3px 2px rgba(50, 40, 30, .16));
+  animation: duck-pop 1.4s ease-in-out infinite alternate;
+}
+.scene--hay-pop .scene__media::before { content: "🌾🌾🌾🌾"; left: 0; top: 2%; width: 100%; letter-spacing: .6em; }
+.scene--hay-pop .scene__media::after { content: "🌾🌾🌾🌾"; left: 0; bottom: 3%; width: 100%; letter-spacing: .6em; animation-delay: -.7s; text-align: right; }

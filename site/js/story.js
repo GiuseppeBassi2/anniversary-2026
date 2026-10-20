@@ -220,8 +220,6 @@ export const story = [
 
   // JULY: flowers + road
   a6.media([photo("F", 1), video("F", 2)], { slug: "july-flowers", layout: "side-two", lines: ["Mia regina happy for the flowers 🌹😍❤️", "Finalmente together in Italy again ❤️"], effect: "love-pop" }),
-  a6.media([video("F", 35), video("F", 36)], { slug: "car-faces", layout: "side-two", lines: ["Ei tu! Why so many faces in the car? 😂🚗"], effect: "laugh-pop" }),
-  a6.media([photo("F", 9), video("F", 10)], { slug: "car-snack-sleep", layout: "side-two", lines: ["Snack stop, and then dormissima again 🥐😴❤️"], effect: "sleepy-pop" }),
 
   // FIRENZE
   a6.media([video("F", 3), photo("F", 5)], { slug: "florence-white-dress", layout: "side-two", lines: ["Firenze with my bella in white dress 🤍😍", "So carina, mia regina 👑❤️"], effect: "eyes-pop" }),
@@ -254,11 +252,13 @@ export const story = [
   a6.media([photo("F", 34)], { slug: "amalfi-dessert", lines: ["Dessert face 🍰😍🥹", "Il mio cuore ❤️"], effect: "dessert-pop" }),
 
   // PISCINA
-  a6.video(video("F", 31), { slug: "pool-outdoor", lines: ["Pool time 🏊‍♀️💦", "Mia sirenetta 🧜‍♀️❤️"], effect: "pool-pop" }),
-  a6.media([photo("F", 32), video("F", 33)], { slug: "pool-night", layout: "side-two", lines: ["Moooolto furba faces 😏😂", "We are so stupid together 🤪❤️"], effect: "furba-pop" }),
+  a6.video(video("F", 31), { slug: "pool-outdoor", lines: ["Sooo cool mia bambina god of water 🌊👑😍", "🏊‍♀️💦🧜‍♀️❤️"], effect: "pool-pop" }),
+  a6.media([photo("F", 32), video("F", 33)], { slug: "pool-night", layout: "diag-two", lines: ["Moooolto furba faces 😏😂", "We are so stupid together 🤪❤️"], effect: "furba-pop" }),
+  a6.media([video("F", 35), video("F", 36)], { slug: "car-faces", layout: "diag-two", lines: ["Per favore amore, I want to travel with you like this forever 🥺🚗🌾❤️", "🌾😍🌾"], effect: "hay-pop" }),
+  a6.media([photo("F", 9), video("F", 10)], { slug: "car-snack-sleep", layout: "side-two", lines: ["Please amore don’t stop singing 🥺🎤😍❤️", "🥰💕🎶"], effect: "eyes-pop" }),
 
   // PISA
-  a6.media([photo("F", 38)], { slug: "pisa", lines: ["Pisa 🗼😂", "She is holding it up. Don’t tell anyone 🤫"], effect: "laugh-pop" }),
+  a6.media([photo("F", 38)], { slug: "pisa", lines: ["E! Also Pisa! How is possible so many things! 🗼😍🤯", "❤️💕💖💗💘💝🥰"], effect: "love-pop" }),
 
   // VENEZIA
   a6.media([photo("F", 40), photo("F", 42), video("F", 41)], { slug: "venice", lines: ["Venezia 🚤💋", "Canals, selfies and kisses ❤️"], effect: "kiss-pop" }),
