@@ -36,6 +36,8 @@ button { color: inherit; font: inherit; }
 .experience[data-tone="alarm"] { --bg: #f0d6d0; }
 .experience[data-tone="warm"] { --bg: #f7e6d0; }
 .experience[data-tone="cold"] { --bg: #e6ecf2; }
+.experience[data-tone="food-rise"] { --bg: #f9e1d8; --accent: #a94f62; }
+.experience[data-tone="food-peak"] { --bg: #ffe0cf; --accent: #a13658; }
 
 /* header */
 .experience__header {
@@ -74,6 +76,22 @@ button { color: inherit; font: inherit; }
 @keyframes enter-previous { from { opacity: 0; transform: translateX(-0.9rem); } }
 
 .scene__media { position: relative; flex: 1 1 0; min-height: 0; container-type: size; }
+.scene--chapter .scene__copy { padding-top: clamp(0.6rem, 2vh, 1.5rem); }
+.scene--chapter .scene__title { font-size: clamp(2.6rem, 13vw, 3.9rem); }
+.scene--copy-raised .scene__copy { margin-bottom: clamp(2rem, 7vh, 4rem); }
+.scene--food-rise .scene__line { font-size: 1.2rem; color: #8f3e52; }
+.scene--food-peak .scene__line { font-size: 1.27rem; color: #8f2e50; }
+.scene--food-peak .scene__media::after {
+  content: "✨";
+  position: absolute;
+  top: 3%;
+  right: 3%;
+  z-index: 10;
+  font-size: 2.4rem;
+  pointer-events: none;
+  animation: sparkle 1.2s ease-in-out infinite alternate;
+}
+@keyframes sparkle { from { transform: scale(0.85) rotate(-10deg); opacity: 0.6; } to { transform: scale(1.2) rotate(12deg); opacity: 1; } }
 
 /* copy */
 .scene__copy { display: grid; gap: 0.3rem; flex: 0 0 auto; text-align: center; justify-items: center; padding-bottom: 0.2rem; }
